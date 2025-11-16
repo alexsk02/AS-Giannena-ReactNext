@@ -11,8 +11,8 @@ function Facilities() {
       <h2 className="facilities-title">Εγκαταστάσεις</h2>
 
       <div className="facility-section">
-        <Image
-          src={limnopoula}
+        <img
+          src={limnopoula.src}
           alt="Κλειστό Γυμναστήριο Λιμνοπούλας"
           className="facility-image"
         />
@@ -41,8 +41,8 @@ function Facilities() {
       </div>
 
       <div className="facility-section">
-        <Image
-          src={beachVolley}
+        <img
+          src={beachVolley.src}
           alt="Γήπεδο Beach Volley Περάματος"
           className="facility-image"
         />

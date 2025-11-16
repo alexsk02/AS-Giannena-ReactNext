@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import "../styles/ImageCarousel.css";
 
 function ImageCarousel({ images, interval = 6000 }) {
@@ -20,7 +19,7 @@ function ImageCarousel({ images, interval = 6000 }) {
   return (
     <div className="carousel-container">
       {images.map((img, i) => (
-        <Image
+        <img
           key={i}
           src={img.src}
           alt={img.alt || `Slide ${i + 1}`}

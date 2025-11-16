@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import ImageCarousel from "./components/ImageCarousel";
 import ArticleCarousel from "./components/ArticleCarousel";
 import Link from "next/link";
-import Image from "next/image";
 
 import "./styles/Home.css";
 import "./styles/Matches.css";

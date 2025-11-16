@@ -2,7 +2,6 @@
 
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import Image from "next/image";
 import Link from "next/link";
 
 import "../styles/Footer.css";
@@ -15,7 +14,11 @@ function Footer() {
         {/* Logo and Club Info */}
         <div className="footer-section footer-club-info">
           <div className="footer-logo-container">
-            <Image src={logo} alt="ΑΣ Γιάννενα Logo" className="footer-logo" />
+            <img
+              src={logo.src}
+              alt="ΑΣ Γιάννενα Logo"
+              className="footer-logo"
+            />
           </div>
           <div className="footer-text-content">
             <h4 className="footer-title">ΑΣ Γιάννενα</h4>

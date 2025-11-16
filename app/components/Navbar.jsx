@@ -27,7 +27,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-left">
           <Link href="/" className="navbar-logo-link">
-            <Image src={logo} alt="Team Logo" className="navbar-logo" />
+            <img src={logo.src} alt="Team Logo" className="navbar-logo" />
           </Link>
 
           {/* Full menu for large screens */}
@@ -64,7 +64,7 @@ function Navbar() {
       <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <Link href="/" onClick={handleSidebarClose}>
-            <Image src={logo} alt="Team Logo" className="navbar-logo" />
+            <img src={logo.src} alt="Team Logo" className="navbar-logo" />
           </Link>
           <button className="close-btn" onClick={() => setSidebarOpen(false)}>
             &times;

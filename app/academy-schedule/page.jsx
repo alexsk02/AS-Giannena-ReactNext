@@ -1,5 +1,4 @@
 import "../styles/Academy-Schedule.css";
-import Image from "next/image";
 import schedule_3o from "@/public/schedule_3o.jpg";
 import schedule_6o from "@/public/schedule_6o.jpg";
 
@@ -18,13 +17,13 @@ export default function AcademySchedule() {
       <h1 className="page-title-text">Πρόγραμμα Ακαδημιών 2025-26</h1>
 
       <div className="schedule-images">
-        <Image
-          src={schedule_3o}
+        <img
+          src={schedule_3o.src}
           alt="Πρόγραμμα 3ο Γυμνάσιο"
           className="schedule-image"
         />
-        <Image
-          src={schedule_6o}
+        <img
+          src={schedule_6o.src}
           alt="Πρόγραμμα 6ο Γυμνάσιο"
           className="schedule-image"
         />

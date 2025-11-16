@@ -99,8 +99,8 @@ function Roster() {
             onClick={() => togglePlayer(index)}
           >
             <div className="player-image-wrapper">
-              <Image
-                src={player.image}
+              <img
+                src={player.image.src}
                 alt={player.name}
                 className="player-photo"
               />

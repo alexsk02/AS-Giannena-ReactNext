@@ -1,7 +1,6 @@
 "use client";
 
 import "../styles/Academy-Register.css";
-import Image from "next/image";
 import flyer from "@/public/flyer.jpg";
 import { FaPhoneAlt, FaEnvelope, FaWpforms, FaDownload } from "react-icons/fa";
 
@@ -20,8 +19,8 @@ export default function AcademyRegister() {
       <h1 className="page-title-text">Εγγραφή</h1>
 
       <div className="flyer-container">
-        <Image
-          src={flyer}
+        <img
+          src={flyer.src}
           alt="Flyer Εγγραφής"
           className="flyer-image"
           width={400}
