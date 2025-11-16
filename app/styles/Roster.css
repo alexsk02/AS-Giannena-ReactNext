@@ -1,0 +1,156 @@
+.roster-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ---- Titles ---- */
+.section-title-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: none; /* Removes underline */
+}
+
+/* ---- Player Grid ---- */
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---- Player Card ---- */
+.player-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #eee;
+}
+
+.player-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Image ---- */
+.player-image-wrapper {
+  position: relative;
+}
+
+.player-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* ---- Jersey badge ---- */
+.jersey-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #ff0077;
+  color: #fff;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ---- Content ---- */
+.player-card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.player-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 5px 0;
+}
+
+.player-position {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+/* ---- Expandable details ---- */
+.player-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 15px;
+  transition: all 0.35s ease;
+  background: #ffffff;
+}
+
+.player-details.visible {
+  max-height: 300px;
+  padding: 15px;
+  opacity: 1;
+}
+
+.player-details p {
+  margin: 8px 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.player-details a {
+  color: #ff0077;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ----------------------------
+   STAFF SECTION (NEW DESIGN)
+-----------------------------*/
+
+/* ---------- STAFF GRID ---------- */
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* ---------- STAFF CARDS ---------- */
+
+.staff-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- STAFF TEXT ---------- */
+
+.staff-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.staff-role {
+  font-size: 0.95rem;
+  color: #777;
+}

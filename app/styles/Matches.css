@@ -1,0 +1,139 @@
+.matches-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #1a1a1a;
+}
+
+.matches-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.matchday-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  padding: 0.8rem 1.2rem;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.3s ease;
+}
+
+.matchday-selector select {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.matchday-selector select:hover {
+  border-color: #888;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.match-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  padding: 1.4rem 1.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 6px solid #6a00ff;
+}
+
+.match-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  width: 220px; /* 💡 Set fixed width for alignment */
+  justify-content: flex-start;
+}
+
+.team-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+  transform: scale(1.05);
+}
+
+.match-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 100px;
+}
+
+.score {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.date {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.time {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .match-card {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .team {
+    justify-content: center;
+  }
+
+  .matchday-selector {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .matchday-selector select {
+    width: 100%;
+    max-width: 300px;
+  }
+}

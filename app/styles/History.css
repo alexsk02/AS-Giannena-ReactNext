@@ -1,0 +1,39 @@
+.history-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.history-text {
+  flex: 1;
+  max-width: 900px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  color: #333;
+}
+
+.history-page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.intro-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro-section p {
+  font-size: 1.1rem;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: #ff0077;
+  width: 60%;
+  margin: 0 auto;
+}

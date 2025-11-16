@@ -1,0 +1,104 @@
+.footer {
+  background-color: #fff6f6;
+  color: #000000;
+  margin-top: 2rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #db2777;
+  margin-bottom: 0.5rem;
+}
+
+.footer-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #db2777;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 0.25rem 0;
+}
+
+.footer-links a {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #374151;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ec4899;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.footer-icon:hover {
+  color: #ec4899;
+}
+
+.footer-club-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.footer-logo {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-text-content {
+  display: flex;
+  flex-direction: column;
+}
