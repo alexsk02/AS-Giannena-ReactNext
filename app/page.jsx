@@ -154,25 +154,25 @@ export default function Home() {
       {/* Quick Links */}
       <section className="quick-links">
         <div className="link-card">
-          <img src={academyIcon.src} alt="" />
+          <img src={academyIcon.src} alt="Ακαδημία" />
           <h3>Ακαδημίες</h3>
           <Link href="/academy-schedule">Δείτε το πρόγραμμα</Link>
         </div>
 
         <div className="link-card">
-          <img src={scheduleIcon.src} alt="" />
+          <img src={scheduleIcon.src} alt="Νέα" />
           <h3>Νέα</h3>
           <Link href="/news">Τα νέα της ομάδας</Link>
         </div>
 
         <div className="link-card">
-          <img src={rosterIcon.src} alt="" />
+          <img src={rosterIcon.src} alt="Ρόστερ" />
           <h3>Ρόστερ</h3>
           <Link href="/roster-women">Οι αθλητές μας</Link>
         </div>
 
         <div className="link-card">
-          <img src={contactIcon.src} alt="" />
+          <img src={contactIcon.src} alt="Επικοινωνία" />
           <h3>Επικοινωνία</h3>
           <Link href="/contact-info">Μιλήστε μαζί μας</Link>
         </div>

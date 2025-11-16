@@ -8,6 +8,15 @@ import beachVolley from "@/public/beach_volley.png";
 function Facilities() {
   return (
     <div className="facilities-container">
+      <title>ΑΣ Γιάννενα Βόλεϊ- Εγκαταστάσεις</title>
+      <meta
+        name="description"
+        content="Δείτε τις εγκαταστάσεις του ΑΣ Γιάννενα"
+      />
+      <meta
+        name="keywords"
+        content="ΑΣ Γιάννενα, Εγκαταστάσεις, Βόλεϊ, Ιωάννινα"
+      />
       <h2 className="facilities-title">Εγκαταστάσεις</h2>
 
       <div className="facility-section">
