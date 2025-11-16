@@ -1,0 +1,140 @@
+{
+  "redirects": [
+    { "source": "/istoriko", "destination": "/history", "permanent": true },
+    {
+      "source": "/εγκαταστασεισ",
+      "destination": "/facilities",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact-info",
+      "permanent": true
+    },
+    {
+      "source": "/rosterwomen_2024-2025",
+      "destination": "/roster-women",
+      "permanent": true
+    },
+    {
+      "source": "/agones_b-ethniki-andron",
+      "destination": "/schedule-men",
+      "permanent": true
+    },
+    {
+      "source": "/β-εθνικη-γυναικων",
+      "destination": "/schedule-women",
+      "permanent": true
+    },
+    {
+      "source": "/κ20-κοριτσιων",
+      "destination": "/schedule-girlsU20",
+      "permanent": true
+    },
+    {
+      "source": "/κ21-αγοριων",
+      "destination": "/schedule-boysU21",
+      "permanent": true
+    },
+    {
+      "source": "/κ18-κοριτσιων",
+      "destination": "/schedule-girlsU18",
+      "permanent": true
+    },
+    {
+      "source": "/κ18-αγοριων",
+      "destination": "/schedule-boysU18",
+      "permanent": true
+    },
+    {
+      "source": "/κ16-κοριτσιων",
+      "destination": "/schedule-girlsU16",
+      "permanent": true
+    },
+    {
+      "source": "/κ18-αγοριων-2",
+      "destination": "/schedule-boysU17",
+      "permanent": true
+    },
+    {
+      "source": "/βαθμολογια_β-εθνικη-γυναικων",
+      "destination": "/standings-women",
+      "permanent": true
+    },
+    {
+      "source": "/β-ανδρων",
+      "destination": "/standings-men",
+      "permanent": true
+    },
+    {
+      "source": "/βαθμολογια_κ20",
+      "destination": "/standings-girlsU20",
+      "permanent": true
+    },
+    {
+      "source": "/βαθμολογια_κ21-αγοριων",
+      "destination": "/standings-boysU21",
+      "permanent": true
+    },
+    {
+      "source": "/βαθμολογια_κ18-κορ",
+      "destination": "/standings-girlsU18",
+      "permanent": true
+    },
+    {
+      "source": "/βαθμολογια_κ18-αγοριων",
+      "destination": "/standings-boysU18",
+      "permanent": true
+    },
+    {
+      "source": "/βαθμολογια_κ16-κοριτσιων",
+      "destination": "/standings-girlsU16",
+      "permanent": true
+    },
+    {
+      "source": "/βαθμολογια_κ17-αγορ",
+      "destination": "/standings-boysU17",
+      "permanent": true
+    },
+    {
+      "source": "/entypo-eggrafis",
+      "destination": "/academy-register",
+      "permanent": true
+    },
+    {
+      "source": "/flyer",
+      "destination": "/academy-register",
+      "permanent": true
+    },
+    {
+      "source": "/προγραμμα-προπονησεων",
+      "destination": "/academy-schedule",
+      "permanent": true
+    },
+    {
+      "source": "/xorigiki-protasi1718",
+      "destination": "/sponsors",
+      "permanent": true
+    },
+    {
+      "source": "/category/news",
+      "destination": "/news",
+      "permanent": true
+    },
+    {
+      "source": "/category/academia-news",
+      "destination": "/academy-news",
+      "permanent": true
+    },
+    {
+      "source": "/category/news-women",
+      "destination": "/women-news",
+      "permanent": true
+    },
+    {
+      "source": "/category/ΑΝΔΡΙΚΟ-ΤΜΗΜΑ",
+      "destination": "/men-news",
+      "permanent": true
+    }
+  ]
+}

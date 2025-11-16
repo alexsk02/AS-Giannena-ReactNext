@@ -8,6 +8,7 @@ export default function WomenMatches() {
   const [teams, setTeams] = useState([]);
   const [selectedMatchday, setSelectedMatchday] = useState("Αγωνιστική 1η");
   const [matchdays, setMatchdays] = useState([]);
+  const [loading, setLoading] = useState(true); // ✅ Loading state
 
   useEffect(() => {
     async function fetchData() {
@@ -50,7 +51,6 @@ export default function WomenMatches() {
         const now = new Date();
         let mostRecentMatchday = allMatchdays[0];
 
-        // Group matches by matchday
         const matchesByDay = allMatchdays.map((md) => ({
           matchday: md,
           latestDate: new Date(
@@ -62,7 +62,6 @@ export default function WomenMatches() {
           ),
         }));
 
-        // Find the last matchday whose latest match is before or equal to now
         const pastMatchdays = matchesByDay
           .filter((m) => m.latestDate <= now)
           .sort((a, b) => b.latestDate - a.latestDate);
@@ -70,7 +69,6 @@ export default function WomenMatches() {
         if (pastMatchdays.length > 0) {
           mostRecentMatchday = pastMatchdays[0].matchday;
         } else {
-          // Otherwise, pick the next upcoming matchday
           const upcoming = matchesByDay
             .filter((m) => m.latestDate > now)
             .sort((a, b) => a.latestDate - b.latestDate);
@@ -85,6 +83,8 @@ export default function WomenMatches() {
         setSelectedMatchday(mostRecentMatchday);
       } catch (error) {
         console.error("Error fetching match or team data:", error);
+      } finally {
+        setLoading(false); // ✅ Finished loading
       }
     }
 
@@ -121,54 +121,65 @@ export default function WomenMatches() {
 
       <h1 className="matches-title">Αγώνες Γυναικών</h1>
 
-      <div className="matchday-selector">
-        <label>Αγωνιστική: </label>
-        <select
-          value={selectedMatchday}
-          onChange={(e) => setSelectedMatchday(e.target.value)}
-        >
-          {matchdays.map((md, idx) => (
-            <option key={idx} value={md}>
-              {md}
-            </option>
-          ))}
-        </select>
-      </div>
+      {/* Show dropdown only after loading */}
+      {matchdays.length > 0 && !loading && (
+        <div className="matchday-selector">
+          <label>Αγωνιστική: </label>
+          <select
+            value={selectedMatchday}
+            onChange={(e) => setSelectedMatchday(e.target.value)}
+          >
+            {matchdays.map((md, idx) => (
+              <option key={idx} value={md}>
+                {md}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <div className="matches-list">
-        {filteredMatches.map((match) => (
-          <div key={match.id} className="match-card">
-            <div className="team">
-              <img
-                src={getLogo(match.homeTeam)}
-                alt={match.homeTeam}
-                className="team-logo"
-              />
-              <span>{match.homeTeam}</span>
-            </div>
+        {loading ? (
+          <p>Φόρτωση αγώνων...</p>
+        ) : filteredMatches.length > 0 ? (
+          filteredMatches.map((match) => (
+            <div key={match.id} className="match-card">
+              <div className="team">
+                <img
+                  src={getLogo(match.homeTeam)}
+                  alt={match.homeTeam}
+                  className="team-logo"
+                />
+                <span>{match.homeTeam}</span>
+              </div>
 
-            <div className="match-info">
-              {match.homeScore !== null && match.awayScore !== null ? (
-                <span className="score">
-                  {match.homeScore} - {match.awayScore}
-                </span>
-              ) : (
-                <span className="score">vs</span>
-              )}
-              <span className="date">{formatDate(match.date)}</span>
-              <span className="time">{formatTime(match.date)}</span>
-            </div>
+              <div className="match-info">
+                {match.homeScore !== null && match.awayScore !== null ? (
+                  <span className="score">
+                    {match.homeScore} - {match.awayScore}
+                  </span>
+                ) : (
+                  <span className="score">vs</span>
+                )}
+                <span className="date">{formatDate(match.date)}</span>
+                <span className="time">{formatTime(match.date)}</span>
+              </div>
 
-            <div className="team">
-              <img
-                src={getLogo(match.awayTeam)}
-                alt={match.awayTeam}
-                className="team-logo"
-              />
-              <span>{match.awayTeam}</span>
+              <div className="team">
+                <img
+                  src={getLogo(match.awayTeam)}
+                  alt={match.awayTeam}
+                  className="team-logo"
+                />
+                <span>{match.awayTeam}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="no-matches-message">
+            Σε αναμονή για την εκκίνηση του πρωταθλήματος
+          </p>
+        )}
       </div>
     </div>
   );

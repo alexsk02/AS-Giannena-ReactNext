@@ -8,17 +8,19 @@ export default function GirlsU20Matches() {
   const [teams, setTeams] = useState([]);
   const [selectedMatchday, setSelectedMatchday] = useState("Αγωνιστική 1η");
   const [matchdays, setMatchdays] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const matchRes = await fetch(
-          "https://as-giannena-strapibackend.onrender.com/api/girls-u20-matches?populate=*&pagination[limit]=100"
-        );
-
-        const teamRes = await fetch(
-          "https://as-giannena-strapibackend.onrender.com/api/girls-u20-teams?populate=logo"
-        );
+        const [matchRes, teamRes] = await Promise.all([
+          fetch(
+            "https://as-giannena-strapibackend.onrender.com/api/girls-u20-matches?populate=*&pagination[limit]=100"
+          ),
+          fetch(
+            "https://as-giannena-strapibackend.onrender.com/api/girls-u20-teams?populate=logo"
+          ),
+        ]);
 
         const matchData = await matchRes.json();
         const teamData = await teamRes.json();
@@ -46,11 +48,10 @@ export default function GirlsU20Matches() {
           return numA - numB;
         });
 
-        // ✅ Find the most recent matchday based on date
+        // Determine most recent matchday based on dates
         const now = new Date();
         let mostRecentMatchday = allMatchdays[0];
 
-        // Group matches by matchday
         const matchesByDay = allMatchdays.map((md) => ({
           matchday: md,
           latestDate: new Date(
@@ -62,7 +63,6 @@ export default function GirlsU20Matches() {
           ),
         }));
 
-        // Find the last matchday whose latest match is before or equal to now
         const pastMatchdays = matchesByDay
           .filter((m) => m.latestDate <= now)
           .sort((a, b) => b.latestDate - a.latestDate);
@@ -70,7 +70,6 @@ export default function GirlsU20Matches() {
         if (pastMatchdays.length > 0) {
           mostRecentMatchday = pastMatchdays[0].matchday;
         } else {
-          // Otherwise, pick the next upcoming matchday
           const upcoming = matchesByDay
             .filter((m) => m.latestDate > now)
             .sort((a, b) => a.latestDate - b.latestDate);
@@ -79,13 +78,14 @@ export default function GirlsU20Matches() {
           }
         }
 
-        // ✅ Set everything
         setMatchdays(allMatchdays);
         setMatches(parsedMatches);
         setTeams(parsedTeams);
         setSelectedMatchday(mostRecentMatchday);
       } catch (error) {
         console.error("Error fetching match or team data:", error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -96,20 +96,22 @@ export default function GirlsU20Matches() {
     (match) => match.matchday === selectedMatchday
   );
 
-  const getLogo = (teamName) => {
-    const team = teams.find((t) => t.name === teamName);
-    return team?.logo || "";
-  };
+  const getLogo = (teamName) =>
+    teams.find((t) => t.name === teamName)?.logo || "";
 
-  const formatDate = (dateStr) => {
-    const options = { day: "numeric", month: "short", year: "numeric" };
-    return new Date(dateStr).toLocaleDateString("el-GR", options);
-  };
+  const formatDate = (dateStr) =>
+    new Date(dateStr).toLocaleDateString("el-GR", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
 
-  const formatTime = (dateStr) => {
-    const options = { hour: "2-digit", minute: "2-digit", hour12: false };
-    return new Date(dateStr).toLocaleTimeString("el-GR", options);
-  };
+  const formatTime = (dateStr) =>
+    new Date(dateStr).toLocaleTimeString("el-GR", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
 
   return (
     <div className="matches-page">
@@ -122,56 +124,67 @@ export default function GirlsU20Matches() {
         name="keywords"
         content="ΑΣ Γιάννενα, Αγώνες, Κορίτσια, Κ20, Βόλεϊ"
       />
+
       <h1 className="matches-title">Αγώνες Κοριτσιών Κ20</h1>
 
-      <div className="matchday-selector">
-        <label>Αγωνιστική: </label>
-        <select
-          value={selectedMatchday}
-          onChange={(e) => setSelectedMatchday(e.target.value)}
-        >
-          {matchdays.map((md, idx) => (
-            <option key={idx} value={md}>
-              {md}
-            </option>
-          ))}
-        </select>
-      </div>
+      {!loading && matchdays.length > 0 && (
+        <div className="matchday-selector">
+          <label>Αγωνιστική: </label>
+          <select
+            value={selectedMatchday}
+            onChange={(e) => setSelectedMatchday(e.target.value)}
+          >
+            {matchdays.map((md, idx) => (
+              <option key={idx} value={md}>
+                {md}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <div className="matches-list">
-        {filteredMatches.map((match) => (
-          <div key={match.id} className="match-card">
-            <div className="team">
-              <img
-                src={getLogo(match.homeTeam)}
-                alt={match.homeTeam}
-                className="team-logo"
-              />
-              <span>{match.homeTeam}</span>
-            </div>
+        {loading ? (
+          <p>Φόρτωση αγώνων...</p>
+        ) : filteredMatches.length > 0 ? (
+          filteredMatches.map((match) => (
+            <div key={match.id} className="match-card">
+              <div className="team">
+                <img
+                  src={getLogo(match.homeTeam)}
+                  alt={match.homeTeam}
+                  className="team-logo"
+                />
+                <span>{match.homeTeam}</span>
+              </div>
 
-            <div className="match-info">
-              {match.homeScore !== null && match.awayScore !== null ? (
-                <span className="score">
-                  {match.homeScore} - {match.awayScore}
-                </span>
-              ) : (
-                <span className="score">vs</span>
-              )}
-              <span className="date">{formatDate(match.date)}</span>
-              <span className="time">{formatTime(match.date)}</span>
-            </div>
+              <div className="match-info">
+                {match.homeScore !== null && match.awayScore !== null ? (
+                  <span className="score">
+                    {match.homeScore} - {match.awayScore}
+                  </span>
+                ) : (
+                  <span className="score">vs</span>
+                )}
+                <span className="date">{formatDate(match.date)}</span>
+                <span className="time">{formatTime(match.date)}</span>
+              </div>
 
-            <div className="team">
-              <img
-                src={getLogo(match.awayTeam)}
-                alt={match.awayTeam}
-                className="team-logo"
-              />
-              <span>{match.awayTeam}</span>
+              <div className="team">
+                <img
+                  src={getLogo(match.awayTeam)}
+                  alt={match.awayTeam}
+                  className="team-logo"
+                />
+                <span>{match.awayTeam}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="no-matches-message">
+            Σε αναμονή για την εκκίνηση του πρωταθλήματος
+          </p>
+        )}
       </div>
     </div>
   );

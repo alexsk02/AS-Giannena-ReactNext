@@ -7,11 +7,12 @@ import "../styles/Matches.css";
 export default function GirlsU18Standings() {
   const [group1Teams, setGroup1Teams] = useState([]);
   const [group2Teams, setGroup2Teams] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchTeams() {
       try {
-        // Fetch Όμιλος 1
+        // Group 1
         const res1 = await fetch(
           "https://as-giannena-strapibackend.onrender.com/api/girls-u18-teams?populate=logo"
         );
@@ -31,7 +32,7 @@ export default function GirlsU18Standings() {
 
         setGroup1Teams(parsedGroup1);
 
-        // Fetch Όμιλος 2
+        // Group 2
         const res2 = await fetch(
           "https://as-giannena-strapibackend.onrender.com/api/girls-u18-team2s?populate=logo"
         );
@@ -52,6 +53,8 @@ export default function GirlsU18Standings() {
         setGroup2Teams(parsedGroup2);
       } catch (error) {
         console.error("Failed to fetch teams:", error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -92,6 +95,8 @@ export default function GirlsU18Standings() {
     </div>
   );
 
+  const noTeams = group1Teams.length === 0 && group2Teams.length === 0;
+
   return (
     <div className="standings-page">
       <title>ΑΣ Γιάννενα Βόλεϊ- Βαθμολογία Κορίτσια Κ18</title>
@@ -103,15 +108,34 @@ export default function GirlsU18Standings() {
         name="keywords"
         content="ΑΣ Γιάννενα, Βαθμολογία, Κορίτσια, Κ18, Βόλεϊ"
       />
+
       <h1 className="standings-title">Βαθμολογία Κοριτσιών Κ18</h1>
 
-      {/* Όμιλος 1 */}
-      <h2 className="group-title">Όμιλος 1</h2>
-      {renderTable(group1Teams)}
+      {loading ? (
+        <p>Φόρτωση βαθμολογίας...</p>
+      ) : noTeams ? (
+        <p className="no-matches-message">
+          Σε αναμονή για την εκκίνηση του πρωταθλήματος
+        </p>
+      ) : (
+        <>
+          {/* Όμιλος 1 */}
+          {group1Teams.length > 0 && (
+            <>
+              <h2 className="group-title">Όμιλος 1</h2>
+              {renderTable(group1Teams)}
+            </>
+          )}
 
-      {/* Όμιλος 2 */}
-      <h2 className="group-title">Όμιλος 2</h2>
-      {renderTable(group2Teams)}
+          {/* Όμιλος 2 */}
+          {group2Teams.length > 0 && (
+            <>
+              <h2 className="group-title">Όμιλος 2</h2>
+              {renderTable(group2Teams)}
+            </>
+          )}
+        </>
+      )}
     </div>
   );
 }

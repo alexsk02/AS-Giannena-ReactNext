@@ -6,6 +6,7 @@ import "../styles/Matches.css";
 
 export default function BoysU18Standings() {
   const [teams, setTeams] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchTeams() {
@@ -28,10 +29,11 @@ export default function BoysU18Standings() {
           };
         });
 
-        // Sort by points descending
         setTeams(parsedTeams.sort((a, b) => b.points - a.points));
       } catch (error) {
         console.error("Failed to fetch teams:", error);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -49,42 +51,52 @@ export default function BoysU18Standings() {
         name="keywords"
         content="ΑΣ Γιάννενα, Βαθμολογία, Αγόρια, Κ18, Βόλεϊ"
       />
+
       <h1 className="standings-title">Βαθμολογία Αγοριών Κ18</h1>
-      <div className="table-scroll-container">
-        <table className="standings-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Ομάδα</th>
-              <th>Αγώνες</th>
-              <th>Νίκες</th>
-              <th>Ήττες</th>
-              <th>Βαθμοί</th>
-            </tr>
-          </thead>
-          <tbody>
-            {teams.map((team, index) => (
-              <tr key={team.id}>
-                <td>{index + 1}</td>
-                <td className="team-info">
-                  {team.logo && (
-                    <img
-                      src={team.logo}
-                      alt={team.name}
-                      className="team-logo"
-                    />
-                  )}
-                  <span>{team.name}</span>
-                </td>
-                <td>{team.gamesPlayed}</td>
-                <td>{team.wins}</td>
-                <td>{team.loses}</td>
-                <td>{team.points}</td>
+
+      {loading ? (
+        <p>Φόρτωση βαθμολογίας...</p>
+      ) : teams.length === 0 ? (
+        <p className="no-matches-message">
+          Σε αναμονή για την εκκίνηση του πρωταθλήματος
+        </p>
+      ) : (
+        <div className="table-scroll-container">
+          <table className="standings-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ομάδα</th>
+                <th>Αγώνες</th>
+                <th>Νίκες</th>
+                <th>Ήττες</th>
+                <th>Βαθμοί</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {teams.map((team, index) => (
+                <tr key={team.id}>
+                  <td>{index + 1}</td>
+                  <td className="team-info">
+                    {team.logo && (
+                      <img
+                        src={team.logo}
+                        alt={team.name}
+                        className="team-logo"
+                      />
+                    )}
+                    <span>{team.name}</span>
+                  </td>
+                  <td>{team.gamesPlayed}</td>
+                  <td>{team.wins}</td>
+                  <td>{team.loses}</td>
+                  <td>{team.points}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
