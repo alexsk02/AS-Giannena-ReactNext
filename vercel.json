@@ -16,11 +16,7 @@
       "destination": "/roster-women",
       "permanent": true
     },
-    {
-      "source": "/agones_b-ethniki-andron",
-      "destination": "/schedule-men",
-      "permanent": true
-    },
+
     {
       "source": "/%CE%B2-%CE%B5%CE%B8%CE%BD%CE%B9%CE%BA%CE%B7-%CE%B3%CF%85%CE%BD%CE%B1%CE%B9%CE%BA%CF%89%CE%BD",
       "destination": "/schedule-women",
@@ -57,15 +53,11 @@
       "permanent": true
     },
     {
-      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%B2-%CE%B5%CE%B8%CE%BD%CE%B9%CE%BA%CE%B7-%CE%B3%CF%85%CE%BD%CE%B1%CE%B9%CE%BA%CF%89%CE%BD",
+      "source": "/stadings-b-nathional-women",
       "destination": "/standings-women",
       "permanent": true
     },
-    {
-      "source": "/%CE%B2-%CE%B1%CE%BD%CE%B4%CF%81%CF%89%CE%BD",
-      "destination": "/standings-men",
-      "permanent": true
-    },
+
     {
       "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%BA20",
       "destination": "/standings-girlsU20",
@@ -130,6 +122,16 @@
     {
       "source": "/category/%CE%91%CE%9D%CE%94%CE%A1%CE%99%CE%9A%CE%9F-%CE%A4%CE%9C%CE%97%CE%9C%CE%91",
       "destination": "/men-news",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B2-%CE%B5%CE%B8%CE%BD%CE%B9%CE%BA%CE%B7-%CE%B1%CE%BD%CE%B4%CF%81%CF%89%CE%BD",
+      "destination": "/standings-men",
+      "permanent": true
+    },
+    {
+      "source": "/%CE%B1%CE%B3%CF%89%CE%BD%CE%B5%CF%83_%CE%B2-%CE%B5%CE%B8%CE%BD%CE%B9%CE%BA%CE%B7-%CE%B1%CE%BD%CE%B4%CF%81%CF%89%CE%BD",
+      "destination": "/schedule-men",
       "permanent": true
     }
   ]
