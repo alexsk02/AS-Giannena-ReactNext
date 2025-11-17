@@ -40,7 +40,9 @@ function Dropdown({ label, items, onSelect }) {
                 onSelect?.(); // close the sidebar if passed
               }}
             >
-              <Link href={item.path}>{item.label}</Link>
+              <Link href={item.path} prefetch={false}>
+                {item.label}
+              </Link>
             </li>
           ))}
         </ul>

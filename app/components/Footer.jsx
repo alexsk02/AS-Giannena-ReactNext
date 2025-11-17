@@ -37,16 +37,24 @@ function Footer() {
           <h4 className="footer-subtitle">Σύνδεσμοι</h4>
           <ul className="footer-links">
             <li>
-              <Link href="/">Αρχική</Link>
+              <Link href="/" prefetch={false}>
+                Αρχική
+              </Link>
             </li>
             <li>
-              <Link href="/history">Ιστορία</Link>
+              <Link href="/history" prefetch={false}>
+                Ιστορία
+              </Link>
             </li>
             <li>
-              <Link href="/roster-women">Ρόστερ</Link>
+              <Link href="/roster-women" prefetch={false}>
+                Ρόστερ
+              </Link>
             </li>
             <li>
-              <Link href="/news">Νέα</Link>
+              <Link href="/news" prefetch={false}>
+                Νέα
+              </Link>
             </li>
           </ul>
         </div>

@@ -94,9 +94,12 @@ export default function Home() {
     <div className="home">
       {/* Replace SEO component later */}
 
-      <title>ΑΣ Γιάννενα Βόλεϊ</title>
+      <title>ΑΣ Γιάννενα Βόλεϊ- Αρχική</title>
 
-      <meta name="description" content="Αρχική Σελίδα ΑΣ Γιάννενα" />
+      <meta
+        name="description"
+        content="Αρχική Σελίδα ΑΣ Γιάννενα. Ενημερωθείτε για τα νέα της ομάδας, τους επόμενους αγώνες και τις βαθμολογίες των πρωταθλημάτων."
+      />
       <meta
         name="keywords"
         content="ΑΣ Γιάννενα, ΓΑΣ, Volley, Βόλεϊ, Ιωάννινα, Γιάννενα, Ακαδημία"
@@ -121,7 +124,7 @@ export default function Home() {
           και την εξέλιξη κάθε αθλητή, από τα πρώτα βήματα μέχρι την αγωνιστική
           διάκριση.
         </p>
-        <Link href="/history" className="primary-button">
+        <Link href="/history" className="primary-button" prefetch={false}>
           Ιστορία Ομάδας
         </Link>
       </section>
@@ -156,25 +159,33 @@ export default function Home() {
         <div className="link-card">
           <img src={academyIcon.src} alt="Ακαδημία" />
           <h3>Ακαδημίες</h3>
-          <Link href="/academy-schedule">Δείτε το πρόγραμμα</Link>
+          <Link href="/academy-schedule" prefetch={false}>
+            Δείτε το πρόγραμμα
+          </Link>
         </div>
 
         <div className="link-card">
           <img src={scheduleIcon.src} alt="Νέα" />
           <h3>Νέα</h3>
-          <Link href="/news">Τα νέα της ομάδας</Link>
+          <Link href="/news" prefetch={false}>
+            Τα νέα της ομάδας
+          </Link>
         </div>
 
         <div className="link-card">
           <img src={rosterIcon.src} alt="Ρόστερ" />
           <h3>Ρόστερ</h3>
-          <Link href="/roster-women">Οι αθλητές μας</Link>
+          <Link href="/roster-women" prefetch={false}>
+            Οι αθλητές μας
+          </Link>
         </div>
 
         <div className="link-card">
           <img src={contactIcon.src} alt="Επικοινωνία" />
           <h3>Επικοινωνία</h3>
-          <Link href="/contact-info">Μιλήστε μαζί μας</Link>
+          <Link href="/contact-info" prefetch={false}>
+            Μιλήστε μαζί μας
+          </Link>
         </div>
       </section>
 
