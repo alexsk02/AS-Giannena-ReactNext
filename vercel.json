@@ -2,7 +2,7 @@
   "redirects": [
     { "source": "/istoriko", "destination": "/history", "permanent": true },
     {
-      "source": "/εγκαταστασεισ",
+      "source": "/%CE%B5%CE%B3%CE%BA%CE%B1%CF%84%CE%B1%CF%83%CF%84%CE%B1%CF%83%CE%B5%CE%B9%CF%83",
       "destination": "/facilities",
       "permanent": true
     },
@@ -22,77 +22,77 @@
       "permanent": true
     },
     {
-      "source": "/β-εθνικη-γυναικων",
+      "source": "/%CE%B2-%CE%B5%CE%B8%CE%BD%CE%B9%CE%BA%CE%B7-%CE%B3%CF%85%CE%BD%CE%B1%CE%B9%CE%BA%CF%89%CE%BD",
       "destination": "/schedule-women",
       "permanent": true
     },
     {
-      "source": "/κ20-κοριτσιων",
+      "source": "/%CE%BA20-%CE%BA%CE%BF%CF%81%CE%B9%CF%84%CF%83%CE%B9%CF%89%CE%BD",
       "destination": "/schedule-girlsU20",
       "permanent": true
     },
     {
-      "source": "/κ21-αγοριων",
+      "source": "/%CE%BA21-%CE%B1%CE%B3%CE%BF%CF%81%CE%B9%CF%89%CE%BD",
       "destination": "/schedule-boysU21",
       "permanent": true
     },
     {
-      "source": "/κ18-κοριτσιων",
+      "source": "/%CE%BA18-%CE%BA%CE%BF%CF%81%CE%B9%CF%84%CF%83%CE%B9%CF%89%CE%BD",
       "destination": "/schedule-girlsU18",
       "permanent": true
     },
     {
-      "source": "/κ18-αγοριων",
+      "source": "/%CE%BA18-%CE%B1%CE%B3%CE%BF%CF%81%CE%B9%CF%89%CE%BD",
       "destination": "/schedule-boysU18",
       "permanent": true
     },
     {
-      "source": "/κ16-κοριτσιων",
+      "source": "/%CE%BA16-%CE%BA%CE%BF%CF%81%CE%B9%CF%84%CF%83%CE%B9%CF%89%CE%BD",
       "destination": "/schedule-girlsU16",
       "permanent": true
     },
     {
-      "source": "/κ18-αγοριων-2",
+      "source": "/%CE%BA18-%CE%B1%CE%B3%CE%BF%CF%81%CE%B9%CF%89%CE%BD-2",
       "destination": "/schedule-boysU17",
       "permanent": true
     },
     {
-      "source": "/βαθμολογια_β-εθνικη-γυναικων",
+      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%B2-%CE%B5%CE%B8%CE%BD%CE%B9%CE%BA%CE%B7-%CE%B3%CF%85%CE%BD%CE%B1%CE%B9%CE%BA%CF%89%CE%BD",
       "destination": "/standings-women",
       "permanent": true
     },
     {
-      "source": "/β-ανδρων",
+      "source": "/%CE%B2-%CE%B1%CE%BD%CE%B4%CF%81%CF%89%CE%BD",
       "destination": "/standings-men",
       "permanent": true
     },
     {
-      "source": "/βαθμολογια_κ20",
+      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%BA20",
       "destination": "/standings-girlsU20",
       "permanent": true
     },
     {
-      "source": "/βαθμολογια_κ21-αγοριων",
+      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%BA21-%CE%B1%CE%B3%CE%BF%CF%81%CE%B9%CF%89%CE%BD",
       "destination": "/standings-boysU21",
       "permanent": true
     },
     {
-      "source": "/βαθμολογια_κ18-κορ",
+      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%BA18-%CE%BA%CE%BF%CF%81",
       "destination": "/standings-girlsU18",
       "permanent": true
     },
     {
-      "source": "/βαθμολογια_κ18-αγοριων",
+      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%BA18-%CE%B1%CE%B3%CE%BF%CF%81%CE%B9%CF%89%CE%BD",
       "destination": "/standings-boysU18",
       "permanent": true
     },
     {
-      "source": "/βαθμολογια_κ16-κοριτσιων",
+      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%BA16-%CE%BA%CE%BF%CF%81%CE%B9%CF%84%CF%83%CE%B9%CF%89%CE%BD",
       "destination": "/standings-girlsU16",
       "permanent": true
     },
     {
-      "source": "/βαθμολογια_κ17-αγορ",
+      "source": "/%CE%B2%CE%B1%CE%B8%CE%BC%CE%BF%CE%BB%CE%BF%CE%B3%CE%B9%CE%B1_%CE%BA17-%CE%B1%CE%B3%CE%BF%CF%81",
       "destination": "/standings-boysU17",
       "permanent": true
     },
@@ -107,7 +107,7 @@
       "permanent": true
     },
     {
-      "source": "/προγραμμα-προπονησεων",
+      "source": "/%CF%80%CF%81%CE%BF%CE%B3%CF%81%CE%B1%CE%BC%CE%BC%CE%B1-%CF%80%CF%81%CE%BF%CF%80%CE%BF%CE%BD%CE%B7%CF%83%CE%B5%CF%89%CE%BD",
       "destination": "/academy-schedule",
       "permanent": true
     },
@@ -116,11 +116,7 @@
       "destination": "/sponsors",
       "permanent": true
     },
-    {
-      "source": "/category/news",
-      "destination": "/news",
-      "permanent": true
-    },
+    { "source": "/category/news", "destination": "/news", "permanent": true },
     {
       "source": "/category/academia-news",
       "destination": "/academy-news",
@@ -132,7 +128,7 @@
       "permanent": true
     },
     {
-      "source": "/category/ΑΝΔΡΙΚΟ-ΤΜΗΜΑ",
+      "source": "/category/%CE%91%CE%9D%CE%94%CE%A1%CE%99%CE%9A%CE%9F-%CE%A4%CE%9C%CE%97%CE%9C%CE%91",
       "destination": "/men-news",
       "permanent": true
     }
