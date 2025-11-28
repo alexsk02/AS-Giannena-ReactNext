@@ -53,7 +53,7 @@ export default function News() {
 
   return (
     <div className="news-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Νέα</title>
+      <title>Νέα-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τα τελευταία νέα του ΑΣ Γιάννενα."

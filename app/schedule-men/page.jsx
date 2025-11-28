@@ -112,7 +112,7 @@ export default function MenMatches() {
 
   return (
     <div className="matches-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Αγώνες Άνδρες</title>
+      <title>Αγώνες Άνδρες-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τους αγώνες για την ομάδα των ανδρών του ΑΣ Γιάννενα."

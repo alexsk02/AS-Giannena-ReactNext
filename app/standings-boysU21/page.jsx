@@ -42,7 +42,7 @@ export default function BoysU21Standings() {
 
   return (
     <div className="standings-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Βαθμολογία Αγόρια Κ21</title>
+      <title>Βαθμολογία Αγόρια Κ21-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τη βαθμολογία για την ομάδα των αγοριών Κ21 του ΑΣ Γιάννενα."

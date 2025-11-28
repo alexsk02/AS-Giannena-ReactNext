@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Static pages -->
+  <url><loc>https://www.asgiannena-volley.gr/</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/history</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/facilities</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/contact-info</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/roster-women</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/roster-men</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/academy-register</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/academy-schedule</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/sponsors</loc></url>
+
+  <!-- News & Categories -->
+  <url><loc>https://www.asgiannena-volley.gr/news</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/academy-news</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/men-news</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/women-news</loc></url>
+
+  <!-- Standings -->
+  <url><loc>https://www.asgiannena-volley.gr/standings-women</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/standings-men</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/standings-girlsU20</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/standings-boysU21</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/standings-girlsU18</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/standings-boysU18</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/standings-girlsU16</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/standings-boysU17</loc></url>
+
+  <!-- Matches -->
+  <url><loc>https://www.asgiannena-volley.gr/schedule-women</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/schedule-men</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/schedule-girlsU20</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/schedule-boysU21</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/schedule-girlsU18</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/schedule-boysU18</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/schedule-girlsU16</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/schedule-boysU17</loc></url>
+
+  <!--Articles-->
+  <url><loc>https://www.asgiannena-volley.gr/news/sta-empeira-xeria-toy-dimitri-kalogiroy-oi-gynaikes-kai-neanides-toy-as-giannena</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/news/oi-akadimies-volley-tou-gas-ksekinoun</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/news/podariko-me-niki-ekanan-oi-andres-toy-gas-gia-to-2023</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/news/o-gas-paizei-beach-volley</loc></url>
+  <url><loc>https://www.asgiannena-volley.gr/news/ta-koritsia-k16-toy-gas-protathlitries-dytikis-elladas-deytera-ta-agoria-k17</loc></url>
+</urlset>

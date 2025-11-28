@@ -42,7 +42,7 @@ export default function WomenStandings() {
 
   return (
     <div className="standings-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Βαθμολογία Γυναικών</title>
+      <title>Βαθμολογία Γυναικών-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τη βαθμολογία για την ομάδα των γυναικών του ΑΣ Γιάννενα."

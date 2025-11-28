@@ -115,7 +115,7 @@ export default function BoysU17Matches() {
 
   return (
     <div className="matches-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Αγώνες Αγόρια Κ17</title>
+      <title>Αγώνες Αγόρια Κ17-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τους αγώνες για την ομάδα των αγοριών Κ17 του ΑΣ Γιάννενα."

@@ -115,7 +115,7 @@ export default function BoysU21Matches() {
 
   return (
     <div className="matches-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Αγώνες Αγόρια Κ21</title>
+      <title>Αγώνες Αγόρια Κ21-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τους αγώνες για την ομάδα των αγοριών Κ21 του ΑΣ Γιάννενα."

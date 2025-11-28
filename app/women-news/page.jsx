@@ -52,7 +52,7 @@ export default function NewsWomen() {
 
   return (
     <div className="news-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Νέα Γυναίκες</title>
+      <title>Νέα Γυναίκες-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τα τελευταία νέα των γυναικών του ΑΣ Γιάννενα."

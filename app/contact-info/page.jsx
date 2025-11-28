@@ -12,7 +12,7 @@ import { FaXTwitter } from "react-icons/fa6";
 function ContactInfo() {
   return (
     <div className="contact-container">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Επικοινωνία</title>
+      <title>Επικοινωνία-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Επικοινωνήστε με την ομάδα του ΑΣ Γιάννενα"

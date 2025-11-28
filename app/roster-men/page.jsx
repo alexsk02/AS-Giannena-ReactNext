@@ -146,7 +146,7 @@ function Roster() {
 
   return (
     <>
-      <title>ΑΣ Γιάννενα Βόλεϊ- Ρόστερ Ανδρών</title>
+      <title>Ρόστερ Ανδρών-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε το ρόστερ της ανδρικής ομάδας του ΑΣ Γιάννενα."

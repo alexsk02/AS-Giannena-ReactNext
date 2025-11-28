@@ -4,7 +4,7 @@ import Timeline from "../components/Timeline";
 function History() {
   return (
     <div className="history-container">
-      <title>ΑΣ Γιάννενα Βόλεϊ - Ιστορία</title>
+      <title>Ιστορία-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta name="description" content="Δείτε την ιστορία του ΑΣ Γιάννενα" />
 
       <meta

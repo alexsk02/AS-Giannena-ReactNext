@@ -52,7 +52,7 @@ export default function NewsAcademy() {
 
   return (
     <div className="news-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Νέα Ακαδημία</title>
+      <title>Νέα Ακαδημία-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τα τελευταία νέα των ακαδημιών του ΑΣ Γιάννενα."

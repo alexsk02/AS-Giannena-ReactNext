@@ -3,7 +3,7 @@ import Roster from "../components/Roster";
 function Team() {
   return (
     <>
-      <title>ΑΣ Γιάννενα Βόλεϊ- Ρόστερ</title>
+      <title>Ρόστερ Γυναικών-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε το ρόστερ της γυναικείας ομάδας του ΑΣ Γιάννενα."

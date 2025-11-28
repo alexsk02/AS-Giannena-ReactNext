@@ -7,7 +7,7 @@ import { FaPhoneAlt, FaEnvelope, FaWpforms, FaDownload } from "react-icons/fa";
 export default function AcademyRegister() {
   return (
     <div className="academy-register-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ - Εγγραφή Ακαδημία</title>
+      <title>Εγγραφή Ακαδημία-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε πληροφορίες σχετικά με την εγγραφή σας στην ακαδημία του ΑΣ Γιάννενα."

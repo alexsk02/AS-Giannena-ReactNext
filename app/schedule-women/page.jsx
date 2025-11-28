@@ -112,7 +112,7 @@ export default function WomenMatches() {
 
   return (
     <div className="matches-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Αγώνες Γυναίκες</title>
+      <title>Αγώνες Γυναίκες-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τους αγώνες για την ομάδα των γυναικών του ΑΣ Γιάννενα."

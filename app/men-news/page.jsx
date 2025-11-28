@@ -52,7 +52,7 @@ export default function NewsMen() {
 
   return (
     <div className="news-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Νέα Άνδρες</title>
+      <title>Νέα Άνδρες-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τα τελευταία νέα των ανδρών του ΑΣ Γιάννενα."

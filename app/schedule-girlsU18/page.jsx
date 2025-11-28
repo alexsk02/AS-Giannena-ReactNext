@@ -192,7 +192,7 @@ export default function GirlsU18Matches() {
 
   return (
     <div className="matches-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Αγώνες Κορίτσια Κ18</title>
+      <title>Αγώνες Κορίτσια Κ18-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τους αγώνες για την ομάδα των κοριτσιών Κ18 του ΑΣ Γιάννενα."

@@ -99,7 +99,7 @@ export default function GirlsU16Standings() {
 
   return (
     <div className="standings-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Βαθμολογία Κορίτσια Κ16</title>
+      <title>Βαθμολογία Κορίτσια Κ16-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τη βαθμολογία για την ομάδα των κοριτσιών Κ16 του ΑΣ Γιάννενα."

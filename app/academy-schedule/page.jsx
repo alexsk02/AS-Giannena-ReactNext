@@ -5,7 +5,7 @@ import schedule_6o from "@/public/schedule_6o.jpg";
 export default function AcademySchedule() {
   return (
     <div className="academy-schedule-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Ακαδημία Πρόγραμμα</title>
+      <title>Ακαδημία Πρόγραμμα-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε το πρόγραμμα των ακαδημιών του ΑΣ Γιάννενα."

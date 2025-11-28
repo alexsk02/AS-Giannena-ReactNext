@@ -14,7 +14,7 @@ import {
 export default function Sponsors() {
   return (
     <div className="sponsors-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Χορηγοί</title>
+      <title>Χορηγοί-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta name="description" content="Δείτε τους χορηγούς του ΑΣ Γιάννενα." />
       <meta name="keywords" content="ΑΣ Γιάννενα, Χορηγοί, Βόλεϊ" />
 

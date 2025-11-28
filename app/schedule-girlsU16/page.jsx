@@ -192,7 +192,7 @@ export default function GirlsU16Matches() {
 
   return (
     <div className="matches-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Αγώνες Κορίτσια Κ16</title>
+      <title>Αγώνες Κορίτσια Κ16-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τους αγώνες για την ομάδα των κοριτσιών Κ16 του ΑΣ Γιάννενα."

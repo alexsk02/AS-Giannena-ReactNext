@@ -42,7 +42,7 @@ export default function MenStandings() {
 
   return (
     <div className="standings-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Βαθμολογία Ανδρών</title>
+      <title>Βαθμολογία Ανδρών-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τη βαθμολογία για την ομάδα των ανδρών του ΑΣ Γιάννενα."

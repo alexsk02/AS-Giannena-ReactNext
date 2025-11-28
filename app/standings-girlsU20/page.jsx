@@ -42,7 +42,7 @@ export default function GirlsU20Standings() {
 
   return (
     <div className="standings-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Βαθμολογία Κορίτσια Κ20</title>
+      <title>Βαθμολογία Κορίτσια Κ20-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τη βαθμολογία για την ομάδα των κοριτσιών Κ20 του ΑΣ Γιάννενα."

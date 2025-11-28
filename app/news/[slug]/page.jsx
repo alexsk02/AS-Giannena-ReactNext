@@ -157,6 +157,7 @@ export default function ArticlePage() {
 
   return (
     <div className="article-page">
+      <title>Άρθρο-ΑΣ Γιάννενα Βόλεϊ</title>
       <h1 className="article-title">{article.title}</h1>
 
       <p className="article-date">

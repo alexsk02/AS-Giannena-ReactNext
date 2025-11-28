@@ -99,7 +99,7 @@ export default function GirlsU18Standings() {
 
   return (
     <div className="standings-page">
-      <title>ΑΣ Γιάννενα Βόλεϊ- Βαθμολογία Κορίτσια Κ18</title>
+      <title>Βαθμολογία Κορίτσια Κ18-ΑΣ Γιάννενα Βόλεϊ</title>
       <meta
         name="description"
         content="Δείτε τη βαθμολογία για την ομάδα των κοριτσιών Κ18 του ΑΣ Γιάννενα."
