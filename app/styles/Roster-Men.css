@@ -53,11 +53,11 @@
 }
 
 /* ---- Jersey badge ---- */
-.jersey-badge {
+.jersey-badge-men {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: #ff0077;
+  background: #0026ff;
   color: #fff;
   font-weight: 700;
   padding: 6px 12px;
@@ -154,13 +154,11 @@
   color: #777;
 }
 
-/* ----- Smaller Screens: make player-photo taller ----- */
-@media (max-width: 600px) {
+@media (max-width: 808px) {
   .player-photo {
-    height: 450px;
+    height: 600px;
   }
 }
-
-.social-women {
-  color: #ff0077;
+.social-men {
+  color: #0026ff;
 }

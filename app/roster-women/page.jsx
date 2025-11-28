@@ -13,32 +13,7 @@ function Team() {
         content="ΑΣ Γιάννενα, Ρόστερ, Ομάδα, Γυναίκες, Βόλεϊ"
       />
 
-      {/*<Roster />*/}
-
-      <h1
-        style={{
-          textAlign: "center",
-          fontSize: "2rem",
-          fontWeight: "bold",
-          marginTop: "3rem",
-          marginBottom: "2rem",
-          color: "#222",
-        }}
-      >
-        Ρόστερ Γυναικών
-      </h1>
-      <p
-        style={{
-          textAlign: "center",
-          fontSize: "1.5rem",
-          fontWeight: "bold",
-          color: "#555",
-          marginTop: "5rem",
-          marginBottom: "5rem",
-        }}
-      >
-        Σε αναμονή
-      </p>
+      <Roster />
     </>
   );
 }

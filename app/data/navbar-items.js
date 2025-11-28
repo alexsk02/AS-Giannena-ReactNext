@@ -4,7 +4,10 @@ export const club = [
   { label: "Επικοινωνία", path: "/contact-info" },
 ];
 
-export const roster = [{ label: "Γυναίκες", path: "/roster-women" }];
+export const roster = [
+  { label: "Γυναίκες", path: "/roster-women" },
+  { label: "Άνδρες", path: "/roster-men" },
+];
 
 export const schedule = [
   { label: "Γυναίκες-Β Εθνική", path: "/schedule-women" },
