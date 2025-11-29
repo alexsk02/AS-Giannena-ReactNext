@@ -94,7 +94,7 @@ export default function Home() {
     <div className="home">
       {/* Replace SEO component later */}
 
-      <title>ΑΣ Γιάννενα Βόλεϊ- Αρχική</title>
+      <title>ΑΣ Γιάννενα Βόλεϊ-Αρχική</title>
 
       <meta
         name="description"
@@ -104,7 +104,32 @@ export default function Home() {
         name="keywords"
         content="ΑΣ Γιάννενα, ΓΑΣ, Volley, Βόλεϊ, Ιωάννινα, Γιάννενα, Ακαδημία"
       />
+      <meta property="og:locale" content="el_GR" />
+      <meta property="og:type" content="website" />
 
+      <meta property="og:title" content="ΑΣ Γιάννενα Βόλεϊ" />
+      <meta
+        property="og:description"
+        content="Επίσημη ιστοσελίδα του ΑΣ Γιάννενα Volley. Νέα, αγώνες, αποτελέσματα και πλήρης ενημέρωση για τον σύλλογο."
+      />
+
+      <meta property="og:url" content="https://asgiannena-volley.gr/" />
+      <meta property="og:site_name" content="ΑΣ Γιάννενα" />
+      <meta
+        property="og:image"
+        content="https://asgiannena-volley.gr/social-share.png"
+      />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="ΑΣ Γιάννενα Βόλεϊ" />
+      <meta
+        name="twitter:description"
+        content="Επίσημη ιστοσελίδα του ΑΣ Γιάννενα Volley. Νέα, αγώνες, αποτελέσματα και πλήρης ενημέρωση για τον σύλλογο."
+      />
+      <meta
+        name="twitter:image"
+        content="https://asgiannena-volley.gr/social-share.png"
+      />
       {/* Hero */}
       <section className="hero">
         <div className="hero-content">
