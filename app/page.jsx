@@ -119,8 +119,8 @@ export default function Home() {
         property="og:image"
         content="https://asgiannena-volley.gr/social-share.png"
       />
-      <meta property="og:image:width" content="650" />
-      <meta property="og:image:height" content="382" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="628" />
       <meta property="og:image:alt" content="ΑΣ Γιάννενα" />
       <meta property="og:image:type" content="image/png" />
 
