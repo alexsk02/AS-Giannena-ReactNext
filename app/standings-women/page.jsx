@@ -61,41 +61,59 @@ export default function WomenStandings() {
           Σε αναμονή για την εκκίνηση του πρωταθλήματος
         </p>
       ) : (
-        <div className="table-scroll-container">
-          <table className="standings-table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Ομάδα</th>
-                <th>Αγώνες</th>
-                <th>Νίκες</th>
-                <th>Ήττες</th>
-                <th>Βαθμοί</th>
-              </tr>
-            </thead>
-            <tbody>
-              {teams.map((team, index) => (
-                <tr key={team.id}>
-                  <td>{index + 1}</td>
-                  <td className="team-info">
-                    {team.logo && (
-                      <img
-                        src={team.logo}
-                        alt={team.name}
-                        className="team-logo"
-                      />
-                    )}
-                    <span>{team.name}</span>
-                  </td>
-                  <td>{team.gamesPlayed}</td>
-                  <td>{team.wins}</td>
-                  <td>{team.loses}</td>
-                  <td>{team.points}</td>
+        <>
+          <div className="table-scroll-container">
+            <table className="standings-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Ομάδα</th>
+                  <th>Αγώνες</th>
+                  <th>Νίκες</th>
+                  <th>Ήττες</th>
+                  <th>Βαθμοί</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {teams.map((team, index) => (
+                  <tr key={team.id}>
+                    <td>{index + 1}</td>
+                    <td className="team-info">
+                      {team.logo && (
+                        <img
+                          src={team.logo}
+                          alt={team.name}
+                          className="team-logo"
+                        />
+                      )}
+                      <span>{team.name}</span>
+                    </td>
+                    <td>{team.gamesPlayed}</td>
+                    <td>{team.wins}</td>
+                    <td>{team.loses}</td>
+                    <td>{team.points}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p
+            style={{
+              marginTop: "1rem",
+              fontSize: "0.9rem",
+              color: "#666",
+              lineHeight: "1.5",
+              textAlign: "justify",
+              maxWidth: "950px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            Το σωματείο <strong>ΑΣ ΒΟΛΙΣ</strong> ξεκίνησε το πρωτάθλημα με
+            ποινή αφαίρεσης <strong>(-6)</strong> βαθμών λόγω αποχώρησής του την
+            αγωνιστική περίοδο 2024-2025 από το πρωτάθλημα Β΄ Εθνικής Γυναικών.
+          </p>
+        </>
       )}
     </div>
   );
