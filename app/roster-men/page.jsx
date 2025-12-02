@@ -23,7 +23,7 @@ const players = [
     instagram: "https://www.instagram.com/efklis_mamaligas ",
     position: "Ακραίος",
     prevTeam: " ΠΑΟΚ Ρόδου ",
-    height: "1.75μ",
+    height: "1.83μ",
   },
   {
     name: "Ιωάννης Χατζηκλημάνογλου",
