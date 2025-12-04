@@ -148,6 +148,11 @@
       "source": "/teams",
       "destination": "/roster-women",
       "permanent": true
+    },
+    {
+      "source": "/new-coach-dimitris-kalogirou",
+      "destination": "/news/sta-empeira-xeria-toy-dimitri-kalogiroy-oi-gynaikes-kai-neanides-toy-as-giannena",
+      "permanent": true
     }
   ]
 }
