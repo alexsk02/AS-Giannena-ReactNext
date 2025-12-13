@@ -11,6 +11,7 @@ import women_player6 from "@/public/women_player6.jpg";
 import women_player7 from "@/public/women_player7.jpg";
 import women_player8 from "@/public/women_player8.jpg";
 import women_player9 from "@/public/women_player9.jpg";
+import women_player10 from "@/public/women_player10.jpg";
 
 const players = [
   {
@@ -47,7 +48,7 @@ const players = [
     name: "Σοφία Τσιαμούρα",
     image: women_player4,
     dob: "27-7-2003",
-    jersey: "13",
+    jersey: "3",
     instagram: "https://www.instagram.com/sofiatsiamoura",
     position: "Λίμπερο",
     prevTeam: "ΓΣ Δράμας",
@@ -102,6 +103,16 @@ const players = [
     position: "Ακραία",
     prevTeam: "ΑΣΠ Ερμής",
     height: "1.69μ",
+  },
+  {
+    name: "Χρύσα Νταγκοπούλου",
+    image: women_player10,
+    dob: "11-12-2001",
+    jersey: "20",
+    instagram: "https://www.instagram.com/chrysa.ntagkopoulou",
+    position: "Διαγώνια",
+    prevTeam: "ΑΣ Γιάννενα",
+    height: "1.79μ",
   },
 ];
 

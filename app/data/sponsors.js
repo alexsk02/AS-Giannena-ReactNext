@@ -29,7 +29,11 @@ export const collection1 = [
 export const collection2 = [
   { src: avin.src, alt: "Avin" },
   { src: baratsas.src, alt: "Baratsas" },
-  { src: dreamstrom.src, alt: "Dreamstrom" },
+  {
+    src: dreamstrom.src,
+    alt: "Dreamstrom",
+    link: "https://www.dreamstrom.gr/",
+  },
 ];
 
 export const collection3 = [

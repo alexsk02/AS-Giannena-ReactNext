@@ -14,20 +14,27 @@ function ImageCarousel({ images, interval = 6000 }) {
     return () => clearInterval(id);
   }, [images.length, interval]);
 
-  if (!images || images.length === 0) return null;
-
   return (
     <div className="carousel-container">
-      {images.map((img, i) => (
-        <img
-          key={i}
-          src={img.src}
-          alt={img.alt || `Slide ${i + 1}`}
-          className={`carousel-image ${i === index ? "active" : ""}`}
-          width={200} // adjust width
-          height={100} // adjust height
-        />
-      ))}
+      {images.map((img, i) => {
+        const imageElement = (
+          <img
+            src={img.src}
+            alt={img.alt || `Slide ${i + 1}`}
+            className={`carousel-image ${i === index ? "active" : ""}`}
+            width={200}
+            height={100}
+          />
+        );
+
+        return img.link ? (
+          <a key={i} href={img.link} target="_blank" rel="noopener noreferrer">
+            {imageElement}
+          </a>
+        ) : (
+          <div key={i}>{imageElement}</div>
+        );
+      })}
     </div>
   );
 }
