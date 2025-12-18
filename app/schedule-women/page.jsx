@@ -47,44 +47,55 @@ export default function WomenMatches() {
           return numA - numB;
         });
 
-        // ✅ Find the most recent matchday based on date
+        // Determine the matchday to show
         const now = new Date();
-        let mostRecentMatchday = allMatchdays[0];
+        let selectedMatchday = allMatchdays[0];
 
-        const matchesByDay = allMatchdays.map((md) => ({
-          matchday: md,
-          latestDate: new Date(
-            Math.max(
-              ...parsedMatches
-                .filter((m) => m.matchday === md)
-                .map((m) => new Date(m.date))
-            )
-          ),
-        }));
+        const matchesByDay = allMatchdays.map((md) => {
+          const dayMatches = parsedMatches.filter((m) => m.matchday === md);
 
-        const pastMatchdays = matchesByDay
-          .filter((m) => m.latestDate <= now)
-          .sort((a, b) => b.latestDate - a.latestDate);
+          const hasStarted = dayMatches.some((m) => new Date(m.date) <= now);
+          const allPast = dayMatches.every((m) => new Date(m.date) <= now);
 
-        if (pastMatchdays.length > 0) {
-          mostRecentMatchday = pastMatchdays[0].matchday;
+          return {
+            matchday: md,
+            hasStarted,
+            allPast,
+          };
+        });
+
+        // 1️⃣ Prefer current matchday (some matches played, some not)
+        const currentMatchday = matchesByDay.find(
+          (m) => m.hasStarted && !m.allPast
+        );
+
+        if (currentMatchday) {
+          selectedMatchday = currentMatchday.matchday;
         } else {
-          const upcoming = matchesByDay
-            .filter((m) => m.latestDate > now)
-            .sort((a, b) => a.latestDate - b.latestDate);
-          if (upcoming.length > 0) {
-            mostRecentMatchday = upcoming[0].matchday;
+          // 2️⃣ Otherwise, next matchday where no match has started
+          const upcoming = matchesByDay.find((m) => !m.hasStarted);
+
+          if (upcoming) {
+            selectedMatchday = upcoming.matchday;
+          } else {
+            // 3️⃣ Otherwise, fallback to last fully completed matchday
+            const pastMatchdays = matchesByDay.filter((m) => m.allPast);
+            if (pastMatchdays.length > 0) {
+              selectedMatchday =
+                pastMatchdays[pastMatchdays.length - 1].matchday;
+            }
           }
         }
+        // (fallback to Αγωνιστική 1η already handled by initialization)
 
         setMatchdays(allMatchdays);
         setMatches(parsedMatches);
         setTeams(parsedTeams);
-        setSelectedMatchday(mostRecentMatchday);
+        setSelectedMatchday(selectedMatchday);
       } catch (error) {
         console.error("Error fetching match or team data:", error);
       } finally {
-        setLoading(false); // ✅ Finished loading
+        setLoading(false);
       }
     }
 

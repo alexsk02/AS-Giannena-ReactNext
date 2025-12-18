@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Standings.css";
 import "../styles/Matches.css";
+import Bracket from "../components/Bracket";
 
 export default function GirlsU20Standings() {
   const [teams, setTeams] = useState([]);
@@ -97,6 +98,8 @@ export default function GirlsU20Standings() {
           </table>
         </div>
       )}
+      <h1 className="bracket-title">Playoff Κορίτσια Κ20</h1>
+      <Bracket />
     </div>
   );
 }

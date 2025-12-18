@@ -82,46 +82,76 @@ export default function GirlsU18Matches() {
 
         const now = new Date();
 
-        const past1 = allMatchdays1
-          .map((md) => ({
-            matchday: md,
-            latestDate: new Date(
-              Math.max(
-                ...parsedMatches1
-                  .filter((m) => m.matchday === md)
-                  .map((m) => m.date)
-              )
-            ),
-          }))
-          .filter((m) => m.latestDate <= now)
-          .sort((a, b) => b.latestDate - a.latestDate);
+        // ---- Ομιλος 1 ----
+        const matchesByDay1 = allMatchdays1.map((md) => {
+          const dayMatches = parsedMatches1.filter((m) => m.matchday === md);
+          const hasStarted = dayMatches.some((m) => new Date(m.date) <= now);
+          const allPast = dayMatches.every((m) => new Date(m.date) <= now);
 
-        const past2 = allMatchdays2
-          .map((md) => ({
+          return {
             matchday: md,
-            latestDate: new Date(
-              Math.max(
-                ...parsedMatches2
-                  .filter((m) => m.matchday === md)
-                  .map((m) => m.date)
-              )
-            ),
-          }))
-          .filter((m) => m.latestDate <= now)
-          .sort((a, b) => b.latestDate - a.latestDate);
+            hasStarted,
+            allPast,
+          };
+        });
 
+        let selectedMd1 = allMatchdays1[0];
+
+        // 1️⃣ Current matchday
+        const currentMd1 = matchesByDay1.find(
+          (m) => m.hasStarted && !m.allPast
+        );
+        if (currentMd1) selectedMd1 = currentMd1.matchday;
+        // 2️⃣ Next matchday
+        else {
+          const upcomingMd1 = matchesByDay1.find((m) => !m.hasStarted);
+          if (upcomingMd1) selectedMd1 = upcomingMd1.matchday;
+          // 3️⃣ Last completed
+          else {
+            const pastMd1 = matchesByDay1.filter((m) => m.allPast);
+            if (pastMd1.length > 0)
+              selectedMd1 = pastMd1[pastMd1.length - 1].matchday;
+          }
+        }
+
+        // ---- Ομιλος 2 ----
+        const matchesByDay2 = allMatchdays2.map((md) => {
+          const dayMatches = parsedMatches2.filter((m) => m.matchday === md);
+          const hasStarted = dayMatches.some((m) => new Date(m.date) <= now);
+          const allPast = dayMatches.every((m) => new Date(m.date) <= now);
+
+          return {
+            matchday: md,
+            hasStarted,
+            allPast,
+          };
+        });
+
+        let selectedMd2 = allMatchdays2[0];
+
+        const currentMd2 = matchesByDay2.find(
+          (m) => m.hasStarted && !m.allPast
+        );
+        if (currentMd2) selectedMd2 = currentMd2.matchday;
+        else {
+          const upcomingMd2 = matchesByDay2.find((m) => !m.hasStarted);
+          if (upcomingMd2) selectedMd2 = upcomingMd2.matchday;
+          else {
+            const pastMd2 = matchesByDay2.filter((m) => m.allPast);
+            if (pastMd2.length > 0)
+              selectedMd2 = pastMd2[pastMd2.length - 1].matchday;
+          }
+        }
+
+        // ---- Set state ----
         setTeams1(parsedTeams1);
         setTeams2(parsedTeams2);
         setMatches1(parsedMatches1);
         setMatches2(parsedMatches2);
         setMatchdays1(allMatchdays1);
         setMatchdays2(allMatchdays2);
-        setSelectedMatchday1(
-          past1.length ? past1[0].matchday : allMatchdays1[0] || ""
-        );
-        setSelectedMatchday2(
-          past2.length ? past2[0].matchday : allMatchdays2[0] || ""
-        );
+        setSelectedMatchday1(selectedMd1);
+        setSelectedMatchday2(selectedMd2);
       } catch (error) {
         console.error("Error fetching matches or teams:", error);
       } finally {

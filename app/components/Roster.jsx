@@ -12,6 +12,7 @@ import women_player7 from "@/public/women_player7.jpg";
 import women_player8 from "@/public/women_player8.jpg";
 import women_player9 from "@/public/women_player9.jpg";
 import women_player10 from "@/public/women_player10.jpg";
+import women_player11 from "@/public/women_player11.jpg";
 
 const players = [
   {
@@ -108,11 +109,21 @@ const players = [
     name: "Χρύσα Νταγκοπούλου",
     image: women_player10,
     dob: "11-12-2001",
-    jersey: "20",
+    jersey: "6",
     instagram: "https://www.instagram.com/chrysa.ntagkopoulou",
     position: "Διαγώνια",
     prevTeam: "ΑΣ Γιάννενα",
     height: "1.79μ",
+  },
+  {
+    name: "Λαγοπόδη Βασιλική-Διονυσία",
+    image: women_player11,
+    dob: "9-10-2006",
+    jersey: "16",
+    instagram: "https://www.instagram.com/vickylagopodi_",
+    position: "Ακραία",
+    prevTeam: "Ζακυνθινός ΑΟ",
+    height: "1.67μ",
   },
 ];
 

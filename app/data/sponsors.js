@@ -21,14 +21,34 @@ import fylliana from "@/public/sponsors/fylliana.jpg";
 import drscrub from "@/public/sponsors/drscrub.jpg";
 
 export const collection1 = [
-  { src: papa_coffee.src, alt: "Papa Coffee" },
-  { src: baraki.src, alt: "Baraki" },
-  { src: vikos.src, alt: "Vikos" },
+  {
+    src: papa_coffee.src,
+    alt: "Papa Coffee",
+    link: "https://www.instagram.com/papascoffeeioannina",
+  },
+  {
+    src: baraki.src,
+    alt: "Baraki",
+    link: "https://www.instagram.com/barakionlygreeks",
+  },
+  {
+    src: vikos.src,
+    alt: "Vikos",
+    link: "https://www.vikos.com/",
+  },
 ];
 
 export const collection2 = [
-  { src: avin.src, alt: "Avin" },
-  { src: baratsas.src, alt: "Baratsas" },
+  {
+    src: avin.src,
+    alt: "Avin",
+    link: "https://moshoulis.gr/",
+  },
+  {
+    src: baratsas.src,
+    alt: "Baratsas",
+    link: "https://www.mparatsas.gr/",
+  },
   {
     src: dreamstrom.src,
     alt: "Dreamstrom",
@@ -37,31 +57,91 @@ export const collection2 = [
 ];
 
 export const collection3 = [
-  { src: elite_strom.src, alt: "Elite Strom" },
-  { src: georgiou.src, alt: "Georgiou" },
-  { src: ipeiroplast.src, alt: "Ipeiroplast" },
+  {
+    src: elite_strom.src,
+    alt: "Elite Strom",
+    link: "https://www.elitestrom.gr/stores/katastima-elite-strom-sta-ioannina",
+  },
+  {
+    src: georgiou.src,
+    alt: "Georgiou",
+    link: "https://epigeo.gr/",
+  },
+  {
+    src: ipeiroplast.src,
+    alt: "Ipeiroplast",
+    link: "https://www.ipiroplast.gr/",
+  },
 ];
 
 export const collection4 = [
-  { src: fylliana.src, alt: "Fylliana" },
-  { src: kapsiohas.src, alt: "Kapsiohas" },
-  { src: kteo_papadopoulos.src, alt: "KTEO Papadopoulos" },
+  {
+    src: fylliana.src,
+    alt: "Fylliana",
+    link: "https://www.fylliana.gr/sale-point/219",
+  },
+  {
+    src: kapsiohas.src,
+    alt: "Kapsiohas",
+    link: "https://www.kapsiohas.gr/",
+  },
+  {
+    src: kteo_papadopoulos.src,
+    alt: "KTEO Papadopoulos",
+    link: "https://ikteopapadopoulos.gr/",
+  },
 ];
 
 export const collection5 = [
-  { src: pindos.src, alt: "Pindos" },
-  { src: prokos.src, alt: "Prokos" },
-  { src: refren.src, alt: "Refren" },
+  {
+    src: pindos.src,
+    alt: "Pindos",
+    link: "https://www.pindos-apsi.gr/",
+  },
+  {
+    src: prokos.src,
+    alt: "Prokos",
+    link: "https://nprokos.gr/",
+  },
+  {
+    src: refren.src,
+    alt: "Refren",
+    link: "https://www.instagram.com/refren_musicbar/?hl=el",
+  },
 ];
 
 export const collection6 = [
-  { src: stavrakis.src, alt: "Stavrakis" },
-  { src: triantafyllou.src, alt: "Triantafyllou" },
-  { src: tsagoil.src, alt: "Tsagoil" },
+  {
+    src: stavrakis.src,
+    alt: "Stavrakis",
+    link: "https://b2b.stavrakis.com.gr/epikoinonia/",
+  },
+  {
+    src: triantafyllou.src,
+    alt: "Triantafyllou",
+    link: "https://www.nikos-triantafillou.gr/",
+  },
+  {
+    src: tsagoil.src,
+    alt: "Tsagoil",
+    link: "https://tsagoil.gr/",
+  },
 ];
 
 export const collection7 = [
-  { src: tzachristas.src, alt: "Tzachristas" },
-  { src: viozois.src, alt: "Viozois" },
-  { src: drscrub.src, alt: "DrScrub" },
+  {
+    src: tzachristas.src,
+    alt: "Tzachristas",
+    link: "https://www.instagram.com/dtzaxristas_edu",
+  },
+  {
+    src: viozois.src,
+    alt: "Viozois",
+    link: "https://viozois.gr/",
+  },
+  {
+    src: drscrub.src,
+    alt: "DrScrub",
+    link: "https://drscrub.gr/",
+  },
 ];

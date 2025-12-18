@@ -1,0 +1,181 @@
+:root {
+  /*--primary: #1e88e5; /* main accent color */
+  /*--primary-soft: rgba(30, 136, 229, 0.08); /* soft background */
+  --primary: #4f46e5;
+  --primary-soft: rgba(79, 70, 229, 0.08);
+  --secondary: #4f46e5;
+  --bg: #ffffff;
+  --text: #1f2937;
+}
+
+.bracket-wrapper {
+  width: 100%;
+  /*overflow-x: auto;*/
+  background: var(--bg);
+  padding: 2rem 0;
+}
+
+.bracket-scale {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  min-width: 900px;
+  padding: 0 1rem;
+  transform-origin: top left;
+}
+
+/* MOBILE SCALE */
+@media (max-width: 900px) {
+  .bracket-scale {
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 600px) {
+  .bracket-scale {
+    transform: scale(0.35);
+  }
+}
+
+/* ROUND HEADERS */
+.round h3,
+.round h4 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.round h4 {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: var(--secondary);
+}
+
+/* MATCH CARDS */
+.match {
+  margin-bottom: 2rem;
+}
+
+.match-content {
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fff, #e0e0e0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary);
+  min-height: 120px; /* bigger for readability */
+}
+
+.match-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* TEAMS */
+.teams {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center; /* horizontal centering */
+  position: relative;
+  padding: 1rem;
+  gap: 1.5rem; /* space between teams */
+}
+
+.team {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1rem;
+  text-align: center; /* horizontal centering */
+  width: 100%;
+}
+
+/* HORIZONTAL DIVIDER BETWEEN TEAMS */
+.teams::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.3;
+  transform: translateY(-50%);
+}
+
+/* SCORES COLUMN */
+.scores-column {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center scores vertically */
+  align-items: center; /* center horizontally */
+  border-left: 3px solid var(--primary);
+  background: var(--primary-soft);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.score-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.score {
+  width: 28px;
+  text-align: center;
+  font-weight: 900;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+/* HORIZONTAL DIVIDER BETWEEN SCORE ROWS */
+.score-divider {
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.4;
+  margin: 0.5rem 0;
+  width: 80%;
+}
+
+/* MULTI-SCORE VERTICAL DIVIDER */
+.scores-column.multi-score::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1.2px;
+  background: var(--primary);
+  opacity: 0.3;
+}
+
+/* OFFSETS */
+.offset {
+  width: 100%;
+}
+
+.sf-offset-top {
+  height: 4rem;
+}
+
+.sf-offset-bottom {
+  height: 10rem;
+}
+
+.final-offset-top {
+  height: 14rem;
+}
+
+.final-offset-middle {
+  height: 5rem;
+}

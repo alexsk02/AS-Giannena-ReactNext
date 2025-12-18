@@ -114,3 +114,12 @@
   background-color: rgba(0, 123, 255, 0.25);
 }
 */
+
+.bracket-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  color: #333;
+}
