@@ -3,11 +3,11 @@ import "../styles/Bracket.css";
 
 function Match({ teamA, teamB, scoreA = [], scoreB = [] }) {
   return (
-    <div className="match">
-      <div className="match-content">
-        <div className="teams">
-          <div className="team">{teamA}</div>
-          <div className="team">{teamB}</div>
+    <div className="match-bracket">
+      <div className="match-bracket-content">
+        <div className="teams-bracket">
+          <div className="team-bracket">{teamA}</div>
+          <div className="team-bracket">{teamB}</div>
         </div>
 
         <div
@@ -15,17 +15,17 @@ function Match({ teamA, teamB, scoreA = [], scoreB = [] }) {
         >
           <div className="score-row">
             {scoreA.map((s, i) => (
-              <span key={i} className="score">
+              <span key={i} className="score-bracket">
                 {s}
               </span>
             ))}
           </div>
 
-          <div className="score-divider" />
+          <div className="score-bracket-divider" />
 
-          <div className="score-row">
+          <div className="score-bracket-row">
             {scoreB.map((s, i) => (
-              <span key={i} className="score">
+              <span key={i} className="score-bracket">
                 {s}
               </span>
             ))}

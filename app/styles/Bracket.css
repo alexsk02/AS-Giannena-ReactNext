@@ -58,11 +58,11 @@
 }
 
 /* MATCH CARDS */
-.match {
+.match-bracket {
   margin-bottom: 2rem;
 }
 
-.match-content {
+.match-bracket-content {
   display: flex;
   border-radius: 16px;
   overflow: hidden;
@@ -73,13 +73,13 @@
   min-height: 120px; /* bigger for readability */
 }
 
-.match-content:hover {
+.match-bracket-content:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* TEAMS */
-.teams {
+.teams-bracket {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -90,7 +90,7 @@
   gap: 1.5rem; /* space between teams */
 }
 
-.team {
+.team-bracket {
   font-weight: 600;
   color: var(--text);
   font-size: 1rem;
@@ -99,7 +99,7 @@
 }
 
 /* HORIZONTAL DIVIDER BETWEEN TEAMS */
-.teams::after {
+.teams-bracket::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -124,13 +124,13 @@
   padding: 0.5rem 0;
 }
 
-.score-row {
+.score-bracket-row {
   display: flex;
   justify-content: center;
   gap: 0.3rem;
 }
 
-.score {
+.score-bracket {
   width: 28px;
   text-align: center;
   font-weight: 900;
@@ -139,7 +139,7 @@
 }
 
 /* HORIZONTAL DIVIDER BETWEEN SCORE ROWS */
-.score-divider {
+.score-bracket-divider {
   height: 1px;
   background: var(--primary);
   opacity: 0.4;
@@ -165,7 +165,7 @@
 }
 
 .sf-offset-top {
-  height: 4rem;
+  height: 4.7rem;
 }
 
 .sf-offset-bottom {
@@ -173,7 +173,7 @@
 }
 
 .final-offset-top {
-  height: 14rem;
+  height: 15rem;
 }
 
 .final-offset-middle {
