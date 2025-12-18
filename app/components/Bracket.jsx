@@ -13,7 +13,7 @@ function Match({ teamA, teamB, scoreA = [], scoreB = [] }) {
         <div
           className={`scores-column ${scoreA.length > 1 ? "multi-score" : ""}`}
         >
-          <div className="score-row">
+          <div className="score-bracket-row">
             {scoreA.map((s, i) => (
               <span key={i} className="score-bracket">
                 {s}
