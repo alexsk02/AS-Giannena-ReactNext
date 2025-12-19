@@ -203,15 +203,11 @@ export default function ArticlePage() {
         content={`https://asgiannena-volley.gr/news/${article.slug}`}
       />
 
-      {article.coverImage && (
-        <>
-          <meta property="og:image" content={coverImgUrl} />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content={article.title} />
-          <meta property="og:image:type" content="image/jpg" />
-        </>
-      )}
+      <meta property="og:image" content={coverImgUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={article.title} />
+      <meta property="og:image:type" content="image/jpg" />
 
       {/* TWITTER */}
       <meta name="twitter:card" content="summary_large_image" />
