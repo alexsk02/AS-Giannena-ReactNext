@@ -114,6 +114,30 @@ function renderBlocks(blocks) {
     }
   });
 }
+function extractDescription(blocks, maxLength = 160) {
+  if (!Array.isArray(blocks)) return "";
+
+  let text = "";
+
+  for (const block of blocks) {
+    if (block.type === "paragraph" && block.children) {
+      for (const child of block.children) {
+        if (child.text) {
+          text += child.text + " ";
+        }
+      }
+    }
+
+    if (text.length >= maxLength) break;
+  }
+
+  return (
+    text
+      .trim()
+      .slice(0, maxLength)
+      .replace(/\s+\S*$/, "") + "..."
+  );
+}
 
 // ---------- MAIN PAGE ----------
 export default function ArticlePage() {
@@ -150,6 +174,7 @@ export default function ArticlePage() {
 
   if (article === null) return <p>Φόρτωση...</p>;
   if (article === "NOT_FOUND") return <p>Άρθρο δεν βρέθηκε.</p>;
+  const description = extractDescription(article.content);
 
   const coverImgUrl = article.coverImage.startsWith("http")
     ? article.coverImage
@@ -157,7 +182,41 @@ export default function ArticlePage() {
 
   return (
     <div className="article-page">
-      <title>Άρθρο-ΑΣ Γιάννενα Βόλεϊ</title>
+      <title>{article.title}</title>
+
+      <meta name="description" content={description} />
+      <meta
+        name="keywords"
+        content="ΑΣ Γιάννενα, Βόλεϊ, Volley, Γιάννενα, Αθλητικά Νέα, Άρθρο"
+      />
+
+      {/* OPEN GRAPH */}
+      <meta property="og:locale" content="el_GR" />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="ΑΣ Γιάννενα Βόλεϊ" />
+
+      <meta property="og:title" content={article.title} />
+      <meta property="og:description" content={description} />
+
+      <meta
+        property="og:url"
+        content={`https://asgiannena-volley.gr/news/${article.slug}`}
+      />
+
+      {article.coverImage && (
+        <>
+          <meta property="og:image" content={coverImgUrl} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={article.title} />
+          <meta property="og:image:type" content="image/jpg" />
+        </>
+      )}
+
+      {/* TWITTER */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={article.title} />
+      <meta name="twitter:description" content={description} />
       <h1 className="article-title">{article.title}</h1>
 
       <p className="article-date">
