@@ -184,35 +184,6 @@ export default function ArticlePage() {
     <div className="article-page">
       <title>{article.title}</title>
 
-      <meta name="description" content={description} />
-      <meta
-        name="keywords"
-        content="ΑΣ Γιάννενα, Βόλεϊ, Volley, Γιάννενα, Αθλητικά Νέα, Άρθρο"
-      />
-
-      {/* OPEN GRAPH */}
-      <meta property="og:locale" content="el_GR" />
-      <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="ΑΣ Γιάννενα Βόλεϊ" />
-
-      <meta property="og:title" content={article.title} />
-      <meta property="og:description" content={description} />
-
-      <meta
-        property="og:url"
-        content={`https://asgiannena-volley.gr/news/${article.slug}`}
-      />
-
-      <meta property="og:image" content={coverImgUrl} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={article.title} />
-      <meta property="og:image:type" content="image/jpg" />
-
-      {/* TWITTER */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={article.title} />
-      <meta name="twitter:description" content={description} />
       <h1 className="article-title">{article.title}</h1>
 
       <p className="article-date">
