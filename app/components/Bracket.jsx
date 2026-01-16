@@ -78,8 +78,8 @@ export default function Bracket() {
           <Match
             teamA="ΠΑΣ Γιάννινα"
             teamB="ΑΣ Γιάννενα"
-            scoreA={[]}
-            scoreB={[]}
+            scoreA={[3, 0]}
+            scoreB={[0, 0]}
           />
 
           <div className="offset sf-offset-bottom" />
@@ -87,8 +87,8 @@ export default function Bracket() {
           <Match
             teamA="ΦΓΣ Πρέβεζας"
             teamB="ΑΣΠ Ερμής"
-            scoreA={[]}
-            scoreB={[]}
+            scoreA={[0, 0]}
+            scoreB={[3, 0]}
           />
         </div>
 
