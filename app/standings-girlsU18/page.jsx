@@ -3,23 +3,23 @@
 import { useEffect, useState } from "react";
 import "../styles/Standings.css";
 import "../styles/Matches.css";
+import Bracket from "../components/Bracket";
 
 export default function GirlsU18Standings() {
-  const [group1Teams, setGroup1Teams] = useState([]);
-  const [group2Teams, setGroup2Teams] = useState([]);
+  const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchTeams() {
       try {
-        // Group 1
-        const res1 = await fetch(
-          "https://as-giannena-strapibackend.onrender.com/api/girls-u18-teams?populate=logo"
+        const response = await fetch(
+          "https://as-giannena-strapibackend.onrender.com/api/girls-u18-teams?populate=logo",
         );
-        const data1 = await res1.json();
+        const data = await response.json();
 
-        const parsedGroup1 = data1.data
-          .map((team) => ({
+        const parsedTeams = data.data.map((item) => {
+          const team = item;
+          return {
             id: team.id,
             name: team.name,
             gamesPlayed: team.gamesPlayed,
@@ -27,30 +27,10 @@ export default function GirlsU18Standings() {
             loses: team.loses,
             points: team.points,
             logo: team.logo?.url || "",
-          }))
-          .sort((a, b) => b.points - a.points);
+          };
+        });
 
-        setGroup1Teams(parsedGroup1);
-
-        // Group 2
-        const res2 = await fetch(
-          "https://as-giannena-strapibackend.onrender.com/api/girls-u18-team2s?populate=logo"
-        );
-        const data2 = await res2.json();
-
-        const parsedGroup2 = data2.data
-          .map((team) => ({
-            id: team.id,
-            name: team.name,
-            gamesPlayed: team.gamesPlayed,
-            wins: team.wins,
-            loses: team.loses,
-            points: team.points,
-            logo: team.logo?.url || "",
-          }))
-          .sort((a, b) => b.points - a.points);
-
-        setGroup2Teams(parsedGroup2);
+        setTeams(parsedTeams.sort((a, b) => b.points - a.points));
       } catch (error) {
         console.error("Failed to fetch teams:", error);
       } finally {
@@ -60,42 +40,6 @@ export default function GirlsU18Standings() {
 
     fetchTeams();
   }, []);
-
-  const renderTable = (teams) => (
-    <div className="table-scroll-container">
-      <table className="standings-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Ομάδα</th>
-            <th>Αγώνες</th>
-            <th>Νίκες</th>
-            <th>Ήττες</th>
-            <th>Βαθμοί</th>
-          </tr>
-        </thead>
-        <tbody>
-          {teams.map((team, index) => (
-            <tr key={team.id}>
-              <td>{index + 1}</td>
-              <td className="team-info">
-                {team.logo && (
-                  <img src={team.logo} alt={team.name} className="team-logo" />
-                )}
-                <span>{team.name}</span>
-              </td>
-              <td>{team.gamesPlayed}</td>
-              <td>{team.wins}</td>
-              <td>{team.loses}</td>
-              <td>{team.points}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-
-  const noTeams = group1Teams.length === 0 && group2Teams.length === 0;
 
   return (
     <div className="standings-page">
@@ -109,32 +53,50 @@ export default function GirlsU18Standings() {
         content="ΑΣ Γιάννενα, Βαθμολογία, Κορίτσια, Κ18, Βόλεϊ"
       />
 
-      <h1 className="standings-title">Βαθμολογία Κοριτσιών Κ18</h1>
+      <h1 className="standings-title">Βαθμολογία Κοριτσιών Κ18 (Α Όμιλος)</h1>
 
       {loading ? (
         <p>Φόρτωση βαθμολογίας...</p>
-      ) : noTeams ? (
+      ) : teams.length === 0 ? (
         <p className="no-matches-message">
           Σε αναμονή για την εκκίνηση του πρωταθλήματος
         </p>
       ) : (
-        <>
-          {/* Όμιλος 1 */}
-          {group1Teams.length > 0 && (
-            <>
-              <h2 className="group-title">Όμιλος 1</h2>
-              {renderTable(group1Teams)}
-            </>
-          )}
-
-          {/* Όμιλος 2 */}
-          {group2Teams.length > 0 && (
-            <>
-              <h2 className="group-title">Όμιλος 2</h2>
-              {renderTable(group2Teams)}
-            </>
-          )}
-        </>
+        <div className="table-scroll-container">
+          <table className="standings-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Ομάδα</th>
+                <th>Αγώνες</th>
+                <th>Νίκες</th>
+                <th>Ήττες</th>
+                <th>Βαθμοί</th>
+              </tr>
+            </thead>
+            <tbody>
+              {teams.map((team, index) => (
+                <tr key={team.id}>
+                  <td>{index + 1}</td>
+                  <td className="team-info">
+                    {team.logo && (
+                      <img
+                        src={team.logo}
+                        alt={team.name}
+                        className="team-logo"
+                      />
+                    )}
+                    <span>{team.name}</span>
+                  </td>
+                  <td>{team.gamesPlayed}</td>
+                  <td>{team.wins}</td>
+                  <td>{team.loses}</td>
+                  <td>{team.points}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
