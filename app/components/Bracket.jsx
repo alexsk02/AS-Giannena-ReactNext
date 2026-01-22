@@ -78,7 +78,7 @@ export default function Bracket() {
           <Match
             teamA="ΠΑΣ Γιάννινα"
             teamB="ΑΣ Γιάννενα"
-            scoreA={[3, 0]}
+            scoreA={[3, 3]}
             scoreB={[0, 0]}
           />
 
@@ -87,8 +87,8 @@ export default function Bracket() {
           <Match
             teamA="ΦΓΣ Πρέβεζας"
             teamB="ΑΣΠ Ερμής"
-            scoreA={[0, 0]}
-            scoreB={[3, 0]}
+            scoreA={[0, 1]}
+            scoreB={[3, 3]}
           />
         </div>
 
@@ -99,8 +99,8 @@ export default function Bracket() {
           <div className="offset final-offset-top" />
 
           <Match
-            teamA="Νικητής SF1"
-            teamB="Νικητής SF2"
+            teamA="ΠΑΣ Γιάννινα"
+            teamB="ΑΣΠ Ερμής"
             scoreA={[]}
             scoreB={[]}
           />
@@ -110,8 +110,8 @@ export default function Bracket() {
           <h4>Μικρός Τελικός</h4>
 
           <Match
-            teamA="Ηττημένος SF1"
-            teamB="Ηττημένος SF2"
+            teamA="ΑΣ Γιάννενα"
+            teamB="ΦΓΣ Πρέβεζας"
             scoreA={[]}
             scoreB={[]}
           />
