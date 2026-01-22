@@ -53,7 +53,7 @@ export default function GirlsU18Standings() {
         content="ΑΣ Γιάννενα, Βαθμολογία, Κορίτσια, Κ18, Βόλεϊ"
       />
 
-      <h1 className="standings-title">Βαθμολογία Κοριτσιών Κ18 (Α Όμιλος)</h1>
+      <h1 className="standings-title">Βαθμολογία Κοριτσιών Κ18 (Β Όμιλος)</h1>
 
       {loading ? (
         <p>Φόρτωση βαθμολογίας...</p>

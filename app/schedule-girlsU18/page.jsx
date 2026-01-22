@@ -136,7 +136,7 @@ export default function GirlsU18Matches() {
         content="ΑΣ Γιάννενα, Αγώνες, Κορίτσια, Κ18, Βόλεϊ"
       />
 
-      <h1 className="matches-title">Αγώνες Κοριτσιών Κ18 (Α Όμιλος)</h1>
+      <h1 className="matches-title">Αγώνες Κοριτσιών Κ18 (Β Όμιλος)</h1>
 
       {!loading && matchdays.length > 0 && (
         <div className="matchday-selector">
