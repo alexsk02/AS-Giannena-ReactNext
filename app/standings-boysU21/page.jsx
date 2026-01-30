@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Standings.css";
 import "../styles/Matches.css";
+import Bracket_BoysU21 from "../components/Bracket_BoysU21";
 
 export default function BoysU21Standings() {
   const [teams, setTeams] = useState([]);
@@ -12,7 +13,7 @@ export default function BoysU21Standings() {
     async function fetchTeams() {
       try {
         const response = await fetch(
-          "https://as-giannena-strapibackend.onrender.com/api/boys-u21-teams?populate=logo"
+          "https://as-giannena-strapibackend.onrender.com/api/boys-u21-teams?populate=logo",
         );
         const data = await response.json();
 
@@ -97,6 +98,8 @@ export default function BoysU21Standings() {
           </table>
         </div>
       )}
+      <h1 className="bracket-title">Playoff Αγόρια Κ21</h1>
+      <Bracket_BoysU21 />
     </div>
   );
 }

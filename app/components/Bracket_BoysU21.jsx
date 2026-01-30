@@ -36,38 +36,11 @@ function Match({ teamA, teamB, scoreA = [], scoreB = [] }) {
   );
 }
 
-export default function Bracket() {
+export default function Bracket_BoysU21() {
   return (
     <div className="bracket-wrapper">
       <div className="bracket-scale">
         {/* QUARTERFINALS */}
-        <div className="round qf">
-          <h3>Προημιτελικά</h3>
-          <Match
-            teamA="ΠΑΣ Γιάννινα"
-            teamB="ΑΣ Βολίς"
-            scoreA={[3]}
-            scoreB={[0]}
-          />
-          <Match
-            teamA="ΑΣ Γιάννενα "
-            teamB="ΑΟ Φιλία Άρτας"
-            scoreA={[3]}
-            scoreB={[1]}
-          />
-          <Match
-            teamA="ΦΓΣ Πρέβεζας"
-            teamB="ΓΣ Άρτας"
-            scoreA={[3]}
-            scoreB={[0]}
-          />
-          <Match
-            teamA="ΑΣΠ Ερμής"
-            teamB="Ελπίδες Λευκάδας"
-            scoreA={[3]}
-            scoreB={[0]}
-          />
-        </div>
 
         {/* SEMIFINALS */}
         <div className="round sf">
@@ -76,8 +49,8 @@ export default function Bracket() {
           <div className="offset sf-offset-top" />
 
           <Match
-            teamA="ΠΑΣ Γιάννινα"
-            teamB="ΑΣ Γιάννενα"
+            teamA="ΑΣ Γιάννενα"
+            teamB="ΑΣΠ Ερμής"
             scoreA={[3, 3]}
             scoreB={[0, 0]}
           />
@@ -85,10 +58,10 @@ export default function Bracket() {
           <div className="offset sf-offset-bottom" />
 
           <Match
-            teamA="ΦΓΣ Πρέβεζας"
-            teamB="ΑΣΠ Ερμής"
-            scoreA={[0, 1]}
-            scoreB={[3, 3]}
+            teamA="ΓΣ Άρτας"
+            teamB="Ελπίδες Λευκάδας"
+            scoreA={[1, 3]}
+            scoreB={[3, 2]}
           />
         </div>
 
@@ -99,22 +72,13 @@ export default function Bracket() {
           <div className="offset final-offset-top" />
 
           <Match
-            teamA="ΠΑΣ Γιάννινα"
-            teamB="ΑΣΠ Ερμής"
-            scoreA={[1]}
-            scoreB={[3]}
+            teamA="ΑΣ Γιάννενα"
+            teamB="Ελπίδες Λευκάδας"
+            scoreA={[3]}
+            scoreB={[0]}
           />
 
           <div className="offset final-offset-middle" />
-
-          <h4>Μικρός Τελικός</h4>
-
-          <Match
-            teamA="ΑΣ Γιάννενα"
-            teamB="ΦΓΣ Πρέβεζας"
-            scoreA={[1]}
-            scoreB={[3]}
-          />
         </div>
       </div>
     </div>
