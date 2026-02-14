@@ -1,0 +1,29 @@
+.history-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.history-text {
+  flex: 1;
+  max-width: 900px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  color: #333;
+}
+
+.history-page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.divider {
+  border: none;
+  height: 2px;
+  background-color: #6a00ff;
+  width: 60%;
+  margin: 0 auto;
+}

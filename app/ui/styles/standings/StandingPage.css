@@ -1,0 +1,29 @@
+.standings-page {
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.standings-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.standing-extra-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: justify;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .standings-title {
+    font-size: 1.2rem;
+  }
+}

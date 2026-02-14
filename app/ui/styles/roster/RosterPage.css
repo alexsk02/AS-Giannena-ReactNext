@@ -1,0 +1,16 @@
+.roster-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.section-title-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: none;
+}

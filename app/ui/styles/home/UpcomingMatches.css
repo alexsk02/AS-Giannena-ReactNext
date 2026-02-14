@@ -1,0 +1,44 @@
+.upcoming-matches {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f9f9f9;
+}
+
+.upcoming-matches h2 {
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+.matches-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.match-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.4rem 1.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border-left: 6px solid #6a00ff;
+}
+
+.match-card h3 {
+  margin-bottom: 0.5rem;
+  color: #0066cc;
+}
+
+@media (max-width: 600px) {
+  .match-card {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+    padding: 1rem;
+  }
+}

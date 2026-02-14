@@ -1,34 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import "./styles/index.css";
+import Navbar from "@/app/ui/components/navbar/Navbar";
+import Footer from "@/app/ui/components/footer/Footer";
 import ScrollToTop from "./ScrollToTop";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
-  icons: {
-    icon: "/favicon.png", // <- path to your favicon in public folder
-  },
-};
+import "@/app/ui/styles/global/global.css";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="el">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <Navbar />
         <ScrollToTop />
-        <main>{children}</main> {/* Page content goes here */}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

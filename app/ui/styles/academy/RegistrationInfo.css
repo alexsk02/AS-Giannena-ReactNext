@@ -1,0 +1,75 @@
+.academy-register-text {
+  padding: 25px 30px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.academy-register-text h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.academy-register-text ul {
+  list-style: none;
+}
+
+.academy-register-text li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 1.05rem;
+}
+
+.academy-register-icon {
+  color: #6a00ff;
+}
+
+.academy-register-text a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.academy-register-text a:hover {
+  text-decoration: underline;
+}
+
+.academy-register-download-text {
+  text-align: center;
+  margin: 15px 0 10px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .academy-register-text li {
+    font-size: 0.95rem;
+  }
+  .academy-register-text .icon {
+    font-size: 1.1rem;
+  }
+  .academy-register-button {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .academy-register-text li {
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+  .academy-register-text .icon {
+    font-size: 1rem;
+  }
+  .academy-register-text h2 {
+    font-size: 1.2rem;
+  }
+  .academy-register-title {
+    font-size: 1.6rem;
+  }
+  .academy-register-download-button {
+    font-size: 0.85rem;
+    padding: 9px 14px;
+  }
+}

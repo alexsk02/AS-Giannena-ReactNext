@@ -1,0 +1,20 @@
+.academy-register-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.academy-register-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.academy-register-flyer-container {
+  margin-bottom: 30px;
+}
+
+.academy-register-flyer-image {
+  max-width: 100%;
+}

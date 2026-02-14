@@ -1,235 +1,79 @@
-"use client";
+import { Fetch_UpcomingMatches, Fetch_Articles } from "@/app/ui/lib/utils";
+import SponsorsCarousel from "@/app/ui/components/sponsors/SponsorsCarousel";
+import ArticleCarousel from "@/app/ui/components/home/ArticleCarousel";
+import LinkCard from "@/app/ui/components/home/LinkCard";
+import UpcomingMatches from "@/app/ui/components/home/UpcomingMatches";
+import About from "@/app/ui/components/home/About";
+import Hero from "@/app/ui/components/home/Hero";
+import "@/app/ui/styles/home/HomePage.css";
 
-import { useEffect, useState } from "react";
-import ImageCarousel from "./components/ImageCarousel";
-import ArticleCarousel from "./components/ArticleCarousel";
-import Link from "next/link";
+export const metadata = {
+  metadataBase: new URL("https://asgiannena-volley.gr"),
 
-import "./styles/Home.css";
-import "./styles/Matches.css";
-import "./styles/ImageCarousel.css";
-import "./styles/index.css";
+  title: "ΑΣ Γιάννενα Βόλεϊ-Αρχική",
 
-// Images must be in /public
-import homeLogo from "@/public/logo.png";
-import academyIcon from "@/public/academy.png";
-import scheduleIcon from "@/public/news.png";
-import rosterIcon from "@/public/roster.png";
-import contactIcon from "@/public/phone.jpg";
+  description:
+    "Αρχική Σελίδα ΑΣ Γιάννενα. Ενημερωθείτε για τα νέα της ομάδας, τους επόμενους αγώνες και τις βαθμολογίες των πρωταθλημάτων.",
 
-import {
-  collection1,
-  collection2,
-  collection3,
-  collection4,
-  collection5,
-  collection6,
-  collection7,
-} from "./data/sponsors";
+  keywords: [
+    "ΑΣ Γιάννενα",
+    "ΓΑΣ",
+    "Volley",
+    "Βόλεϊ",
+    "Ιωάννινα",
+    "Γιάννενα",
+    "Ακαδημία",
+  ],
 
-export default function Home() {
-  const [upcomingMatches, setUpcomingMatches] = useState([]);
+  openGraph: {
+    locale: "el_GR",
+    type: "website",
+    url: "https://asgiannena-volley.gr/",
+    siteName: "ΑΣ Γιάννενα",
 
-  useEffect(() => {
-    async function fetchUpcoming() {
-      try {
-        const categories = [
-          { name: "Γυναίκες", endpoint: "women-matches" },
-          { name: "Άνδρες", endpoint: "men-matches" },
-        ];
+    title: "ΑΣ Γιάννενα Βόλεϊ",
+    description:
+      "Επίσημη ιστοσελίδα του ΑΣ Γιάννενα Volley. Νέα, αγώνες, αποτελέσματα και πλήρης ενημέρωση για τον σύλλογο.",
 
-        const now = new Date();
-        const results = [];
+    images: [
+      {
+        url: "/logos/social-share.png",
+        width: 1200,
+        height: 628,
+        alt: "ΑΣ Γιάννενα",
+        type: "image/png",
+      },
+    ],
+  },
 
-        for (const cat of categories) {
-          const res = await fetch(
-            `https://as-giannena-strapibackend.onrender.com/api/${cat.endpoint}?populate=*&pagination[limit]=100`
-          );
-          const data = await res.json();
+  twitter: {
+    card: "summary_large_image",
+    title: "ΑΣ Γιάννενα Βόλεϊ",
+    description:
+      "Επίσημη ιστοσελίδα του ΑΣ Γιάννενα Volley. Νέα, αγώνες, αποτελέσματα και πλήρης ενημέρωση για τον σύλλογο.",
+    images: ["/logos/social-share.png"],
+  },
+};
 
-          const matches = data.data.map((item) => ({
-            id: item.id,
-            homeTeam: item.homeTeam?.name,
-            awayTeam: item.awayTeam?.name,
-            date: new Date(item.date),
-            matchday: item.matchday,
-            category: cat.name,
-          }));
-
-          const upcoming = matches
-            .filter(
-              (m) =>
-                m.date > now &&
-                (m.homeTeam === "ΑΣ Γιάννενα" || m.awayTeam === "ΑΣ Γιάννενα")
-            )
-            .sort((a, b) => a.date - b.date);
-
-          if (upcoming.length > 0) results.push(upcoming[0]);
-        }
-
-        setUpcomingMatches(results);
-      } catch (err) {
-        console.error("Error fetching upcoming matches:", err);
-      }
-    }
-
-    fetchUpcoming();
-  }, []);
-
-  const formatDate = (date) =>
-    date.toLocaleDateString("el-GR", {
-      weekday: "short",
-      day: "numeric",
-      month: "short",
-    });
-
-  const formatTime = (date) =>
-    date.toLocaleTimeString("el-GR", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    });
+export default async function Home() {
+  const upcomingMatches = await Fetch_UpcomingMatches();
+  const articles = await Fetch_Articles();
 
   return (
     <div className="home">
-      {/* Replace SEO component later */}
+      <Hero />
 
-      <title>ΑΣ Γιάννενα Βόλεϊ-Αρχική</title>
+      <About />
 
-      <meta
-        name="description"
-        content="Αρχική Σελίδα ΑΣ Γιάννενα. Ενημερωθείτε για τα νέα της ομάδας, τους επόμενους αγώνες και τις βαθμολογίες των πρωταθλημάτων."
-      />
-      <meta
-        name="keywords"
-        content="ΑΣ Γιάννενα, ΓΑΣ, Volley, Βόλεϊ, Ιωάννινα, Γιάννενα, Ακαδημία"
-      />
-      <meta property="og:locale" content="el_GR" />
-      <meta property="og:type" content="website" />
+      <ArticleCarousel articles={articles} />
 
-      <meta property="og:title" content="ΑΣ Γιάννενα Βόλεϊ" />
-      <meta
-        property="og:description"
-        content="Επίσημη ιστοσελίδα του ΑΣ Γιάννενα Volley. Νέα, αγώνες, αποτελέσματα και πλήρης ενημέρωση για τον σύλλογο."
-      />
+      <UpcomingMatches upcomingMatches={upcomingMatches} />
 
-      <meta property="og:url" content="https://asgiannena-volley.gr/" />
-      <meta property="og:site_name" content="ΑΣ Γιάννενα" />
-      <meta
-        property="og:image"
-        content="https://asgiannena-volley.gr/social-share.png"
-      />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="628" />
-      <meta property="og:image:alt" content="ΑΣ Γιάννενα" />
-      <meta property="og:image:type" content="image/png" />
+      <LinkCard />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="ΑΣ Γιάννενα Βόλεϊ" />
-      <meta
-        name="twitter:description"
-        content="Επίσημη ιστοσελίδα του ΑΣ Γιάννενα Volley. Νέα, αγώνες, αποτελέσματα και πλήρης ενημέρωση για τον σύλλογο."
-      />
-      <meta
-        name="twitter:image"
-        content="https://asgiannena-volley.gr/social-share.png"
-      />
-      {/* Hero */}
-      <section className="hero">
-        <div className="hero-content">
-          <img src={homeLogo.src} alt="AS Giannena" className="home-logo" />
-          <h1>ΑΣ Γιάννενα</h1>
-          <p>ΓΑΣ – Η δύναμη του βόλεϊ στα Ιωάννινα</p>
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="about">
-        <h2>Γνωρίστε την ομάδα μας</h2>
-        <p>
-          Ο Αθλητικός Σύλλογος Γιάννενα (ΓΑΣ) από το 2014 αναπτύσσει με συνέπεια
-          και επαγγελματισμό το βόλεϊ στην περιοχή μας. Με έμπειρους προπονητές
-          και οργανωμένες ακαδημίες, προωθούμε την αθλητική παιδεία, την
-          ομαδικότητα και την εξέλιξη κάθε αθλητή, από τα πρώτα βήματα μέχρι την
-          αγωνιστική διάκριση.
-        </p>
-        <Link href="/history" className="primary-button" prefetch={false}>
-          Ιστορία Ομάδας
-        </Link>
-      </section>
-
-      <ArticleCarousel />
-
-      {/* Upcoming Matches */}
-      <section className="upcoming-matches">
-        <h2>Επόμενοι Αγώνες</h2>
-
-        <div className="matches-grid">
-          {upcomingMatches.length > 0 ? (
-            upcomingMatches.map((match) => (
-              <div key={match.id} className="match-card">
-                <h3>{match.category}</h3>
-                <p>
-                  {match.homeTeam} vs {match.awayTeam}
-                </p>
-                <p>
-                  {formatDate(match.date)} - {formatTime(match.date)}
-                </p>
-              </div>
-            ))
-          ) : (
-            <p>Δεν υπάρχουν προσεχείς αγώνες για τον ΑΣ Γιάννενα.</p>
-          )}
-        </div>
-      </section>
-
-      {/* Quick Links */}
-      <section className="quick-links">
-        <div className="link-card">
-          <img src={academyIcon.src} alt="Ακαδημία" />
-          <h3>Ακαδημίες</h3>
-          <Link href="/academy-schedule" prefetch={false}>
-            Δείτε το πρόγραμμα
-          </Link>
-        </div>
-
-        <div className="link-card">
-          <img src={scheduleIcon.src} alt="Νέα" />
-          <h3>Νέα</h3>
-          <Link href="/news" prefetch={false}>
-            Τα νέα της ομάδας
-          </Link>
-        </div>
-
-        <div className="link-card">
-          <img src={rosterIcon.src} alt="Ρόστερ" />
-          <h3>Ρόστερ</h3>
-          <Link href="/roster-women" prefetch={false}>
-            Οι αθλητές μας
-          </Link>
-        </div>
-
-        <div className="link-card">
-          <img src={contactIcon.src} alt="Επικοινωνία" />
-          <h3>Επικοινωνία</h3>
-          <Link href="/contact-info" prefetch={false}>
-            Μιλήστε μαζί μας
-          </Link>
-        </div>
-      </section>
-
-      {/* Sponsors */}
       <section className="sponsors">
         <h2>Χορηγοί 2025-26</h2>
-        <div className="sponsor-carousels">
-          <ImageCarousel images={collection1} />
-          <ImageCarousel images={collection2} />
-          <ImageCarousel images={collection3} />
-          <ImageCarousel images={collection4} />
-          <ImageCarousel images={collection5} />
-          <ImageCarousel images={collection6} />
-          <ImageCarousel images={collection7} />
-        </div>
+        <SponsorsCarousel />
       </section>
     </div>
   );

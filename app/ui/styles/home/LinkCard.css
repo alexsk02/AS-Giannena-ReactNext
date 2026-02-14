@@ -1,0 +1,35 @@
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.link-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+}
+
+.link-card img {
+  height: 50px;
+  margin-bottom: 0.8rem;
+}
+
+.link-card h3 {
+  margin-bottom: 0.5rem;
+  color: #6a00ff;
+}
+
+.link-card a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}

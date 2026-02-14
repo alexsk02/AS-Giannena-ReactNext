@@ -1,0 +1,120 @@
+.standings-table {
+  width: 100%;
+  max-width: 1050px;
+  margin: 50px auto;
+  border-collapse: collapse;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.standings-table thead {
+  background-color: #6a00ff;
+}
+
+.standings-table thead th {
+  color: white;
+  padding: 20px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+.standings-table td {
+  padding: 20px 22px;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #f1f1f1;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.standings-table tbody tr {
+  transition: all 0.25s ease;
+}
+
+.standings-table tbody tr:hover {
+  background-color: #f4ecff;
+  transform: scale(1.01);
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  padding-left: 24px;
+  font-size: 16px;
+}
+
+.team-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  background-color: white;
+  transition: transform 0.2s ease;
+}
+
+.standings-table tbody tr:hover .team-logo {
+  transform: scale(1.08);
+}
+
+.standings-table td:last-child {
+  color: #6a00ff;
+  font-weight: 600;
+}
+
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .standings-table thead th,
+  .standings-table td {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+
+  .team-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .team-info {
+    gap: 8px;
+    padding-left: 12px;
+  }
+
+  .table-scroll-container {
+    padding: 0 10px;
+  }
+
+  .standings-table th:nth-child(5),
+  .standings-table td:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .standings-table thead th,
+  .standings-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .team-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .team-info {
+    gap: 6px;
+    padding-left: 8px;
+  }
+}
