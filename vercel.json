@@ -272,7 +272,7 @@
     },
 
     {
-      "source": "men-news",
+      "source": "/men-news",
       "destination": "/news/men",
       "permanent": true
     },
