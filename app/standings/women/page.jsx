@@ -24,6 +24,12 @@ export default async function WomenStandings() {
         βαθμών λόγω αποχώρησής του την αγωνιστική περίοδο 2024-2025 από το
         πρωτάθλημα Β΄ Εθνικής Γυναικών.
       </p>
+      <h1 className="standings-title">Playoff Γυναίκες</h1>
+      <Bracket
+        matches={women_bracketData}
+        startFrom="semifinals"
+        showThirdPlace={false}
+      />
     </div>
   );
 }

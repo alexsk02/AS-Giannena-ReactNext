@@ -21,6 +21,12 @@ export default async function ΜenStandings() {
         αφαίρεσης <strong>(-3)</strong> βαθμών λόγω αποχώρησής του την
         αγωνιστική περίοδο 2024-2025 από το πρωτάθλημα A2 Εθνικής Ανδρών.
       </p>
+      <h1 className="standings-title">Playoff Άνδρες</h1>
+      <Bracket
+        matches={men_bracketData}
+        startFrom="semifinals"
+        showThirdPlace={false}
+      />
     </div>
   );
 }

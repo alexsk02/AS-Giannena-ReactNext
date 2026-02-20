@@ -44,4 +44,5 @@ export const news = [
   { label: "Ακαδημία", path: "/news/academy" },
   { label: "Γυναίκες", path: "/news/women" },
   { label: "Ανδρες", path: "/news/men" },
+  { label: "Νέα", path: "/news/other" },
 ];

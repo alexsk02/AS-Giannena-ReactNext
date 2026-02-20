@@ -79,3 +79,51 @@ export const boysu21_bracketData = {
     scoreB: [0],
   },
 };
+
+export const women_bracketData = {
+  semifinals: [
+    {
+      teamA: "ΑΣ Γιάννενα",
+      teamB: "ΓΕ Αγρινίου",
+      scoreA: [3, 3],
+      scoreB: [0, 0],
+    },
+    {
+      teamA: "ΑΟ Φιλία Άρτας",
+      teamB: "ΑΣ Βολίς",
+      scoreA: [3, 0],
+      scoreB: [1, 3],
+    },
+  ],
+
+  final: {
+    teamA: "Νικητής SF1",
+    teamB: "Νικητής SF2",
+    scoreA: [],
+    scoreB: [],
+  },
+};
+
+export const men_bracketData = {
+  semifinals: [
+    {
+      teamA: "ΑΣ Γιάννενα",
+      teamB: "ΑΟ Φιλία Άρτας",
+      scoreA: [3, 3],
+      scoreB: [0, 1],
+    },
+    {
+      teamA: "ΑΣΠ Ερμής",
+      teamB: "ΓΣ Άρτας",
+      scoreA: [1, 3],
+      scoreB: [3, 0],
+    },
+  ],
+
+  final: {
+    teamA: "Νικητής SF1",
+    teamB: "Νικητής SF2",
+    scoreA: [],
+    scoreB: [],
+  },
+};

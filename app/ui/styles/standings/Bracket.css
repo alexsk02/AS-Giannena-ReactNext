@@ -103,8 +103,10 @@
   transform: translateY(-50%);
 }
 
+/* ✅ Updated for dynamic multi-set support */
 .scores-column {
-  width: 70px;
+  min-width: 70px;
+  padding: 0.5rem 0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -112,21 +114,29 @@
   border-left: 3px solid var(--primary);
   background: var(--primary-soft);
   position: relative;
-  padding: 0.5rem 0;
 }
 
+/* Allow wrapping if many sets */
 .score-bracket-row {
   display: flex;
   justify-content: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
+/* Individual score cell */
 .score-bracket {
-  width: 28px;
+  min-width: 24px;
+  padding: 0 6px;
   text-align: center;
   font-weight: 900;
   color: var(--primary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+}
+
+/* Vertical divider between scores */
+.score-bracket:not(:last-child) {
+  border-right: 1px solid rgba(79, 70, 229, 0.3);
 }
 
 .score-bracket-divider {
@@ -135,17 +145,6 @@
   opacity: 0.4;
   margin: 0.5rem 0;
   width: 80%;
-}
-
-.scores-column.multi-score::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1.2px;
-  background: var(--primary);
-  opacity: 0.3;
 }
 
 .offset {
