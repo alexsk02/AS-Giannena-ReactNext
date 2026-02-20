@@ -5,15 +5,27 @@ export default function Bracket({
   matches,
   startFrom = "quarterfinals",
   showThirdPlace = true,
+  winsPerRound = {
+    quarterfinals: 2,
+    semifinals: 2,
+    final: 1,
+    thirdPlace: 1,
+  },
 }) {
   const showQuarterfinals = startFrom === "quarterfinals";
+  const formatTitle = (baseTitle, wins) => {
+    if (!wins) return baseTitle;
+
+    const label = wins === 1 ? "Νίκη" : "Νίκες";
+    return `${baseTitle} (${wins} ${label})`;
+  };
 
   return (
     <div className="bracket-wrapper">
       <div className="bracket-scale">
         {showQuarterfinals && matches.quarterfinals && (
           <div className="round qf">
-            <h3>Προημιτελικά</h3>
+            <h3>{formatTitle("Προημιτελικά", winsPerRound.quarterfinals)}</h3>
             {matches.quarterfinals.map((match, i) => (
               <Match key={i} {...match} />
             ))}
@@ -22,7 +34,7 @@ export default function Bracket({
 
         {matches.semifinals && (
           <div className="round sf">
-            <h3>Ημιτελικά</h3>
+            <h3>{formatTitle("Ημιτελικά", winsPerRound.semifinals)}</h3>
 
             {matches.semifinals.map((match, i) => (
               <div
@@ -43,7 +55,7 @@ export default function Bracket({
 
         {matches.final && (
           <div className="round final">
-            <h3>Τελικός</h3>
+            <h3>{formatTitle("Τελικός", winsPerRound.final)}</h3>
 
             <div
               className="final-match-wrapper"
@@ -56,7 +68,9 @@ export default function Bracket({
             {showThirdPlace && matches.thirdPlace && (
               <>
                 <div className="offset final-offset-middle" />
-                <h4>Μικρός Τελικός</h4>
+                <h4>
+                  {formatTitle("Μικρός Τελικός", winsPerRound.thirdPlace)}
+                </h4>
                 <Match {...matches.thirdPlace} />
               </>
             )}

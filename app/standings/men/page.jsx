@@ -26,6 +26,10 @@ export default async function ΜenStandings() {
         matches={men_bracketData}
         startFrom="semifinals"
         showThirdPlace={false}
+        winsPerRound={{
+          semifinals: 3,
+          final: 3,
+        }}
       />
     </div>
   );

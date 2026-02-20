@@ -29,6 +29,10 @@ export default async function WomenStandings() {
         matches={women_bracketData}
         startFrom="semifinals"
         showThirdPlace={false}
+        winsPerRound={{
+          semifinals: 3,
+          final: 3,
+        }}
       />
     </div>
   );

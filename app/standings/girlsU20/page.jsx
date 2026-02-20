@@ -29,6 +29,12 @@ export default async function GirlsU20Standings() {
         matches={girlsu20_bracketData}
         startFrom="quarterfinals"
         showThirdPlace={true}
+        winsPerRound={{
+          quarterfinals: 1,
+          semifinals: 2,
+          final: 1,
+          thirdPlace: 1,
+        }}
       />
     </div>
   );

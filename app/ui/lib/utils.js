@@ -115,7 +115,9 @@ export async function Fetch_ArticleContent(slug) {
 }
 
 export function filterMatchesByMatchday(matches, selectedMatchday) {
-  return matches.filter((m) => m.matchday === selectedMatchday);
+  return matches
+    .filter((m) => m.matchday === selectedMatchday)
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
 export function getTeamLogo(teams, teamName) {
@@ -139,13 +141,22 @@ export function formatMatchTime(dateStr) {
 }
 
 export function getAllMatchdays(matches) {
-  return [...new Set(matches.map((m) => m.matchday))].sort((a, b) => {
+  const unique = [...new Set(matches.map((m) => m.matchday))];
+
+  return unique.sort((a, b) => {
     const numA = parseInt(a.match(/\d+/)?.[0]);
     const numB = parseInt(b.match(/\d+/)?.[0]);
-    return numA - numB;
+
+    const hasNumA = !isNaN(numA);
+    const hasNumB = !isNaN(numB);
+    if (hasNumA && hasNumB) {
+      return numA - numB;
+    }
+    if (hasNumA) return -1;
+    if (hasNumB) return 1;
+    return a.localeCompare(b, "el");
   });
 }
-
 export function getRecentMatchday(matches) {
   const allMatchdays = getAllMatchdays(matches);
 
