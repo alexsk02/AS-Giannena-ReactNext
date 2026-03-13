@@ -91,8 +91,8 @@ export const women_bracketData = {
     {
       teamA: "ΑΟ Φιλία Άρτας",
       teamB: "ΑΣ Βολίς",
-      scoreA: [3, 0, 0, 1],
-      scoreB: [1, 3, 3, 3],
+      scoreA: [3, 0, 0, 3, 1],
+      scoreB: [1, 3, 3, 2, 3],
     },
   ],
 
