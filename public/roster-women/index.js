@@ -9,6 +9,7 @@ import women_player8 from "./women_player8.jpg";
 import women_player9 from "./women_player9.jpg";
 import women_player10 from "./women_player10.jpg";
 import women_player11 from "./women_player11.jpg";
+import women_player12 from "./women_player12.jpg";
 
 export {
   women_player1,
@@ -22,4 +23,5 @@ export {
   women_player9,
   women_player10,
   women_player11,
+  women_player12,
 };

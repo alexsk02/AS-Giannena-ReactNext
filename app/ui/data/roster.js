@@ -10,6 +10,7 @@ import {
   women_player9,
   women_player10,
   women_player11,
+  women_player12,
 } from "@/public/roster-women";
 
 import {
@@ -138,6 +139,16 @@ export const women_players = [
     position: "Ακραία",
     prevTeam: "Ζακυνθινός ΑΟ",
     height: "1.67μ",
+  },
+  {
+    name: "Βεδουρά Σοφία-Σταυρούλα",
+    image: women_player12,
+    dob: "9-14-2007",
+    jersey: "5",
+    instagram: "https://www.instagram.com/sophiavedouraa/",
+    position: "Ακραία",
+    prevTeam: "ΑΣΚ ΘΙΝΑΛΙ",
+    height: "1.75μ",
   },
 ];
 
