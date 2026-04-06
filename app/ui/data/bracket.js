@@ -99,8 +99,8 @@ export const women_bracketData = {
   final: {
     teamA: "ΑΣ Γιάννενα",
     teamB: "ΑΣ Βολίς",
-    scoreA: [],
-    scoreB: [],
+    scoreA: [3, 1, 3, 3],
+    scoreB: [0, 3, 0, 2],
   },
 };
 
@@ -115,15 +115,15 @@ export const men_bracketData = {
     {
       teamA: "ΑΣΠ Ερμής",
       teamB: "ΓΣ Άρτας",
-      scoreA: [1, 3, 3],
-      scoreB: [3, 0, 1],
+      scoreA: [1, 3, 3, 3],
+      scoreB: [3, 0, 1, 0],
     },
   ],
 
   final: {
     teamA: "ΑΣ Γιάννενα",
-    teamB: "Νικητής SF2",
-    scoreA: [],
-    scoreB: [],
+    teamB: "ΑΣΠ Ερμής",
+    scoreA: [3, 3],
+    scoreB: [2, 0],
   },
 };
