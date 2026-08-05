@@ -24,7 +24,7 @@ export default function RegistrationInfo() {
         Μπορείτε να κατεβάσετε το έντυπο εγγραφής αθλητή:
       </p>
       <a
-        href="/files/ΕΝΤΥΠΟ-ΕΓΓΡΑΦΗΣ-ΑΘΛΗΤΗ-2025-2026.docx"
+        href="/files/ΕΝΤΥΠΟ-ΕΓΓΡΑΦΗΣ-ΑΘΛΗΤΗ-2026-2027.docx"
         download
         className="academy-register-download-button"
       >

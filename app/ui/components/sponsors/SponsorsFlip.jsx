@@ -7,7 +7,7 @@ export default function SponsorsFlip() {
         <p>
           Μπορείτε να δείτε το φυλλάδιο της Αθλητικής Χορηγίας του ΑΣ Γιάννενα{" "}
           <a
-            href="/files/ΑΘΛΗΤΙΚΗ-ΧΟΡΗΓΙΑ_ΑΣ-ΓΙΑΝΝΕΝΑ_2025-2026.pdf"
+            href="/files/ΑΘΛΗΤΙΚΗ-ΧΟΡΗΓΙΑ_ΑΣ-ΓΙΑΝΝΕΝΑ_2026-2027.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >

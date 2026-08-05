@@ -104,7 +104,7 @@ export default function Footer() {
           </span>
 
           <span className="footer-credit">
-            Created by <strong>Alex Skouras</strong>
+            Developed by <strong>Alex Skouras</strong>
           </span>
         </div>
       </div>

@@ -2,7 +2,7 @@
   text-align: center;
   margin: 2rem auto;
   padding: 1rem;
-  max-width: 900px;
+  max-width: 1050px;
 }
 
 .news-carousel-title {
@@ -38,7 +38,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
+  max-width: 750px;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
