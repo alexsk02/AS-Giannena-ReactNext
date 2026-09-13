@@ -1,12 +1,13 @@
 .standings-table {
   width: 100%;
-  max-width: 1050px;
+  max-width: 1250px;
   margin: 50px auto;
   border-collapse: collapse;
   border-radius: 18px;
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
 }
 
 .standings-table thead {
@@ -15,21 +16,48 @@
 
 .standings-table thead th {
   color: white;
-  padding: 20px 22px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 18px 16px;
+  font-size: 15px;
+  font-weight: 700;
   text-align: center;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
 }
 
 .standings-table td {
-  padding: 20px 22px;
+  padding: 16px 16px;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 700;
   border-bottom: 1px solid #f1f1f1;
   transition:
     background-color 0.25s ease,
     transform 0.2s ease;
+}
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #6a00ff;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.standings-table .regular-text {
+  font-weight: 400;
+}
+
+.team-info .team-name {
+  font-weight: 400;
+}
+
+.standings-table td.text-purple {
+  color: #6a00ff;
+  font-weight: 700;
 }
 
 .standings-table tbody tr {
@@ -38,35 +66,42 @@
 
 .standings-table tbody tr:hover {
   background-color: #f4ecff;
-  transform: scale(1.01);
+  transform: scale(1.005);
 }
 
 .team-info {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-align: left;
-  padding-left: 24px;
-  font-size: 16px;
+  padding-left: 18px;
+  font-size: 15px;
 }
 
 .team-logo {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   border-radius: 50%;
   border: 2px solid #eee;
   background-color: white;
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
-.standings-table tbody tr:hover .team-logo {
+.team-logo-fallback {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  background-color: #e0e0e0;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.standings-table tbody tr:hover .team-logo,
+.standings-table tbody tr:hover .team-logo-fallback {
   transform: scale(1.08);
-}
-
-.standings-table td:last-child {
-  color: #6a00ff;
-  font-weight: 600;
 }
 
 .table-scroll-container {
@@ -74,30 +109,52 @@
   overflow-x: auto;
 }
 
+.no-matches-message {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666666;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin: 40px auto;
+  border: 1px solid #f0e6ff;
+}
+
 @media (max-width: 768px) {
   .standings-table thead th,
   .standings-table td {
     padding: 12px 10px;
-    font-size: 14px;
+    font-size: 13px;
   }
 
-  .team-logo {
-    width: 28px;
-    height: 28px;
+  .rank-badge {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .team-logo,
+  .team-logo-fallback {
+    width: 26px;
+    height: 26px;
   }
 
   .team-info {
     gap: 8px;
-    padding-left: 12px;
+    padding-left: 10px;
   }
 
   .table-scroll-container {
     padding: 0 10px;
   }
 
-  .standings-table th:nth-child(5),
-  .standings-table td:nth-child(5) {
-    display: none;
+  .no-matches-message {
+    font-size: 0.95rem;
+    padding: 18px;
+    margin: 30px 15px;
   }
 }
 
@@ -105,12 +162,19 @@
   .standings-table thead th,
   .standings-table td {
     padding: 10px 8px;
-    font-size: 13px;
+    font-size: 12px;
   }
 
-  .team-logo {
-    width: 24px;
-    height: 24px;
+  .rank-badge {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .team-logo,
+  .team-logo-fallback {
+    width: 22px;
+    height: 22px;
   }
 
   .team-info {

@@ -8,7 +8,50 @@ export async function Fetch_Standings(team) {
     },
   );
   const data = await response.json();
-  const teams = data.data.sort((a, b) => b.points - a.points);
+
+  const teams = data.data.sort((a, b) => {
+    // Helper to calculate ratios safely (avoiding division by zero)
+    const getSetRatio = (t) => {
+      const against = Number(t.setsAgainst) || 0;
+      const forSets = Number(t.setsFor) || 0;
+      return against === 0 ? forSets : forSets / against;
+    };
+
+    const getPointRatio = (t) => {
+      const against = Number(t.pointsAgainst) || 0;
+      const forPts = Number(t.pointsFor) || 0;
+      return against === 0 ? forPts : forPts / against;
+    };
+
+    // Calculate Criteria 1: 2 * wins + 1 * loses
+    const pointsA = 2 * (Number(a.wins) || 0) + 1 * (Number(a.loses) || 0);
+    const pointsB = 2 * (Number(b.wins) || 0) + 1 * (Number(b.loses) || 0);
+
+    // 1st Criterion: Match record points (2 for win, 1 for loss)
+    if (pointsB !== pointsA) {
+      return pointsB - pointsA;
+    }
+
+    // 2nd Criterion: Score points (3 for 3-0/3-1, 2 for 3-2, 1 for 2-3, 0 for 1-3/0-3)
+    const scorePtsA = Number(a.points) || 0;
+    const scorePtsB = Number(b.points) || 0;
+    if (scorePtsB !== scorePtsA) {
+      return scorePtsB - scorePtsA;
+    }
+
+    // 3rd Criterion: Set ratio (setsFor / setsAgainst)
+    const setRatioA = getSetRatio(a);
+    const setRatioB = getSetRatio(b);
+    if (setRatioB !== setRatioA) {
+      return setRatioB - setRatioA;
+    }
+
+    // 4th Criterion: Point ratio (pointsFor / pointsAgainst)
+    const pointRatioA = getPointRatio(a);
+    const pointRatioB = getPointRatio(b);
+    return pointRatioB - pointRatioA;
+  });
+
   return teams;
 }
 
@@ -142,19 +185,50 @@ export function formatMatchTime(dateStr) {
 }
 
 export function getAllMatchdays(matches) {
-  const unique = [...new Set(matches.map((m) => m.matchday))];
+  // Extract unique, non-null/non-empty matchday values
+  const unique = [
+    ...new Set(
+      matches
+        .map((m) => m?.matchday?.trim())
+        .filter((md) => md != null && md !== ""),
+    ),
+  ];
+
+  // Specific order weight map for playoff / tournament phases
+  const stageWeights = {
+    "Φάση των 16": 1000,
+    Προημιτελικά: 1001,
+    Ημιτελικά: 1002,
+    "Μικρός Τελικός": 1003,
+    Τελικός: 1004,
+  };
 
   return unique.sort((a, b) => {
-    const numA = parseInt(a.match(/\d+/)?.[0]);
-    const numB = parseInt(b.match(/\d+/)?.[0]);
+    const weightA = stageWeights[a];
+    const weightB = stageWeights[b];
+
+    // 1. If both are playoff/knockout stages, sort by stage weights
+    if (weightA != null && weightB != null) {
+      return weightA - weightB;
+    }
+    // 2. Playoff stages always go after regular matchdays
+    if (weightA != null) return 1;
+    if (weightB != null) return -1;
+
+    // 3. For regular matchdays, check if numbers exist (e.g. "1η Αγωνιστική" vs "10η Αγωνιστική")
+    const numA = parseInt(a.match(/\d+/)?.[0], 10);
+    const numB = parseInt(b.match(/\d+/)?.[0], 10);
 
     const hasNumA = !isNaN(numA);
     const hasNumB = !isNaN(numB);
+
     if (hasNumA && hasNumB) {
       return numA - numB;
     }
     if (hasNumA) return -1;
     if (hasNumB) return 1;
+
+    // 4. Fallback: Greek alphabetical sort for any other strings
     return a.localeCompare(b, "el");
   });
 }

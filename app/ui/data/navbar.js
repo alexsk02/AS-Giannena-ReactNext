@@ -18,6 +18,8 @@ export const schedule = [
   { label: "Αγόρια Κ18", path: "/schedule/boysU18" },
   { label: "Κορίτσια Κ16", path: "/schedule/girlsU16" },
   { label: "Αγόρια Κ17", path: "/schedule/boysU17" },
+  { label: "Κορίτσια Κ15", path: "/schedule/girlsU15" },
+  { label: "Αγόρια Κ15", path: "/schedule/boysU15" },
 ];
 
 export const standings = [
@@ -29,6 +31,8 @@ export const standings = [
   { label: "Αγόρια Κ18", path: "/standings/boysU18" },
   { label: "Κορίτσια Κ16", path: "/standings/girlsU16" },
   { label: "Αγόρια Κ17", path: "/standings/boysU17" },
+  { label: "Κορίτσια Κ15", path: "/standings/girlsU15" },
+  { label: "Αγόρια Κ15", path: "/standings/boysU15" },
 ];
 
 export const academies = [

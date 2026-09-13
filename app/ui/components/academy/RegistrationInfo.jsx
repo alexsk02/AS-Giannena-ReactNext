@@ -8,7 +8,7 @@ export default function RegistrationInfo() {
       <ul>
         <li>
           <FaWpforms className="academy-register-icon" /> Μέσω της{" "}
-          <a href="/contact-info">φόρμας επικοινωνίας</a> του site
+          <a href="/club/contact-info">φόρμας επικοινωνίας</a> του site
         </li>
         <li>
           <FaPhoneAlt className="academy-register-icon" /> Τηλεφωνικά στο{" "}

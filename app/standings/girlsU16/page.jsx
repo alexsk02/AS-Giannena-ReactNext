@@ -1,6 +1,4 @@
 import Standing from "@/app/ui/components/standings/Standing";
-import Bracket from "@/app/ui/components/standings/Bracket";
-import { girlsu16_bracketData } from "@/app/ui/data/bracket";
 import "@/app/ui/styles/standings/StandingPage.css";
 
 export const metadata = {

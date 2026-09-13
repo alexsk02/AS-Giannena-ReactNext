@@ -1,6 +1,4 @@
 import Standing from "@/app/ui/components/standings/Standing";
-import Bracket from "@/app/ui/components/standings/Bracket";
-import { men_bracketData } from "@/app/ui/data/bracket";
 import "@/app/ui/styles/standings/StandingPage.css";
 
 export const metadata = {
@@ -16,21 +14,6 @@ export default async function ΜenStandings() {
     <div className="standings-page">
       <h1 className="standings-title">Βαθμολογία Άνδρες</h1>
       <Standing team="men-teams" />
-      <p className="standing-extra-info">
-        Το σωματείο <strong>ΑΣ ΓΙΑΝΝΕΝΑ</strong> ξεκίνησε το πρωτάθλημα με ποινή
-        αφαίρεσης <strong>(-3)</strong> βαθμών λόγω αποχώρησής του την
-        αγωνιστική περίοδο 2024-2025 από το πρωτάθλημα A2 Εθνικής Ανδρών.
-      </p>
-      <h1 className="standings-title">Playoff Άνδρες</h1>
-      <Bracket
-        matches={men_bracketData}
-        startFrom="semifinals"
-        showThirdPlace={false}
-        winsPerRound={{
-          semifinals: 3,
-          final: 3,
-        }}
-      />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import Standing from "@/app/ui/components/standings/Standing";
-import Bracket from "@/app/ui/components/standings/Bracket";
-import { boysu21_bracketData } from "@/app/ui/data/bracket";
 import "@/app/ui/styles/standings/StandingPage.css";
 
 export const metadata = {
@@ -17,12 +15,6 @@ export default async function BoysU21Standings() {
     <div className="standings-page">
       <h1 className="standings-title">Βαθμολογία Αγόρια Κ21</h1>
       <Standing team="boys-u21-teams" />
-      <h1 className="standings-title">Playoff Αγόρια Κ21</h1>
-      <Bracket
-        matches={boysu21_bracketData}
-        startFrom="semifinals"
-        showThirdPlace={false}
-      />
     </div>
   );
 }

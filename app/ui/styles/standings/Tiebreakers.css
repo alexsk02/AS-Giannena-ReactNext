@@ -1,0 +1,122 @@
+.tiebreaker-card {
+  max-width: 1250px;
+  margin: 30px auto 50px auto;
+  padding: 30px 35px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #6a00ff;
+  text-align: left;
+}
+
+.tiebreaker-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #6a00ff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.2px;
+}
+
+.tiebreaker-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tiebreaker-list > li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.tiebreaker-list > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: #6a00ff;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.criterion-badge {
+  display: inline-block;
+  background-color: #f0e6ff;
+  color: #6a00ff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-right: 10px;
+  border: 1px solid #d8c2ff;
+  vertical-align: middle;
+}
+
+.tiebreaker-list strong {
+  color: #111111;
+  font-weight: 700;
+}
+
+.tiebreaker-subpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background-color: #f9f6ff;
+  border-radius: 10px;
+  border-left: 3px solid #6a00ff;
+  font-size: 0.98rem;
+  color: #444444;
+}
+
+.tiebreaker-subpoints span {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .tiebreaker-card {
+    padding: 22px 20px;
+    margin: 20px 10px 40px 10px;
+  }
+
+  .tiebreaker-title {
+    font-size: 1.15rem;
+  }
+
+  .tiebreaker-list > li {
+    font-size: 0.95rem;
+    padding-left: 18px;
+  }
+
+  .criterion-badge {
+    font-size: 0.78rem;
+    padding: 2px 8px;
+    margin-right: 6px;
+  }
+
+  .tiebreaker-subpoints {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tiebreaker-title {
+    font-size: 1.05rem;
+  }
+
+  .tiebreaker-list > li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .tiebreaker-subpoints {
+    font-size: 0.82rem;
+  }
+}
