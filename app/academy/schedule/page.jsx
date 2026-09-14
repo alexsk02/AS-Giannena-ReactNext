@@ -13,7 +13,7 @@ export const metadata = {
 export default function AcademySchedule() {
   return (
     <div className="academy-schedule-page">
-      <h1 className="page-title-text">Πρόγραμμα Ακαδημιών 2025-26</h1>
+      <h1 className="page-title-text">Πρόγραμμα Ακαδημιών 2026-27</h1>
       <div className="schedule-images">
         <img
           src={schedule_3o.src}
