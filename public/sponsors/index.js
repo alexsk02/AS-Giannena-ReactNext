@@ -16,9 +16,12 @@ import stavrakis from "./stavrakis.jpg";
 import triantafyllou from "./triantafyllou.jpg";
 import tsagoil from "./tsagoil.jpg";
 import tzachristas from "./tzachristas.jpg";
-import viozois from "./viozois.jpg";
 import fylliana from "./fylliana.jpg";
 import drscrub from "./drscrub.jpg";
+import komin from "./komin.jpg";
+import car_wash_papadopoulos from "./car_wash_papadopoulos.jpg";
+import coffee_epirus from "./coffee_epirus.jpg";
+import allwyn from "./allwyn.jpg";
 
 export {
   papa_coffee,
@@ -42,4 +45,8 @@ export {
   viozois,
   fylliana,
   drscrub,
+  komin,
+  car_wash_papadopoulos,
+  coffee_epirus,
+  allwyn,
 };

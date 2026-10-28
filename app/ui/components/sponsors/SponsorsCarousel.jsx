@@ -8,6 +8,7 @@ import {
   collection5,
   collection6,
   collection7,
+  collection8,
 } from "@/app/ui/data/sponsors";
 
 export default function SponsorsCarousel() {
@@ -20,6 +21,7 @@ export default function SponsorsCarousel() {
       <ImageCarousel images={collection5} />
       <ImageCarousel images={collection6} />
       <ImageCarousel images={collection7} />
+      <ImageCarousel images={collection8} />
     </div>
   );
 }

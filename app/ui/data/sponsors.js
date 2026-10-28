@@ -17,9 +17,12 @@ import {
   triantafyllou,
   tsagoil,
   tzachristas,
-  viozois,
   fylliana,
   drscrub,
+  komin,
+  car_wash_papadopoulos,
+  coffee_epirus,
+  allwyn,
 } from "@/public/sponsors";
 
 export const collection1 = [
@@ -137,13 +140,30 @@ export const collection7 = [
     link: "https://www.instagram.com/dtzaxristas_edu",
   },
   {
-    src: viozois.src,
-    alt: "Viozois",
-    link: "https://viozois.gr/",
+    src: komin.src,
+    alt: "Komin",
+    link: "https://www.instagram.com/komin_ioa/",
   },
   {
     src: drscrub.src,
     alt: "DrScrub",
     link: "https://drscrub.gr/",
+  },
+];
+export const collection8 = [
+  {
+    src: car_wash_papadopoulos.src,
+    alt: "Car Wash Papadopoulos",
+    link: "https://ikteopapadopoulos.gr/",
+  },
+  {
+    src: coffee_epirus.src,
+    alt: "Coffee Epirus",
+    link: "https://www.coffee-epirus.gr/",
+  },
+  {
+    src: allwyn.src,
+    alt: "Allwyn",
+    link: "",
   },
 ];
