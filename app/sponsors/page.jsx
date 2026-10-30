@@ -17,7 +17,7 @@ export default function Sponsors() {
 
       <SponsorsFlip />
 
-      <h2 className="section-title">Χορηγοί 2025-26</h2>
+      <h2 className="section-title">Χορηγοί 2026-27</h2>
 
       <SponsorsCarousel />
     </div>

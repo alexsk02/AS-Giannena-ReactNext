@@ -72,7 +72,7 @@ export default async function Home() {
       <LinkCard />
 
       <section className="sponsors">
-        <h2>Χορηγοί 2025-26</h2>
+        <h2>Χορηγοί 2026-27</h2>
         <SponsorsCarousel />
       </section>
     </div>
