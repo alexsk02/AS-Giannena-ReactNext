@@ -20,7 +20,7 @@ export const metadata = {
 export default async function GirlsU18Standings() {
   return (
     <div className="standings-page">
-      <h1 className="standings-title">Βαθμολογία Κορίτσια Κ18 (Β Όμιλος)</h1>
+      <h1 className="standings-title">Βαθμολογία Κορίτσια Κ18</h1>
       <Standing team="girls-u18-teams" />
     </div>
   );

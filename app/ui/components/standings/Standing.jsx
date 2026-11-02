@@ -5,17 +5,17 @@ import Tiebreakers from "@/app/ui/components/standings/Tiebreakers";
 export default async function Standing({ team }) {
   let teams = await Fetch_Standings(team);
 
-  if (team === "girls-u18-teams") {
-    const allowedTeams = [
-      "ΑΣ Γιάννενα",
-      "ΠΑΣ Γιάννινα",
-      "ΑΓΟ Φιλιππιάδας",
-      "ΑΟ Φιλία Άρτας",
-      "ΚΑΟ Αχιλλέας",
-    ];
+  // if (team === "girls-u18-teams") {
+  //   const allowedTeams = [
+  //     "ΑΣ Γιάννενα",
+  //     "ΠΑΣ Γιάννινα",
+  //     "ΑΓΟ Φιλιππιάδας",
+  //     "ΑΟ Φιλία Άρτας",
+  //     "ΚΑΟ Αχιλλέας",
+  //   ];
 
-    teams = teams.filter((t) => allowedTeams.includes(t.name));
-  }
+  //   teams = teams.filter((t) => allowedTeams.includes(t.name));
+  // }
 
   if (!teams || teams.length === 0) {
     return (
